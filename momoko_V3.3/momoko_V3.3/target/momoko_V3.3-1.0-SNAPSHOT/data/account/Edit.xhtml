@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:comp="http://java.sun.com/jsf/composite/ezcomp"
+      xmlns:p="http://primefaces.org/ui"
+      >
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="body">
+            <p:panel id="mainPanel" styleClass="mainPanel" header="#{bundle.EditAccountTitle}">
+                <p:fieldset id="mainFieldset" legend="#{bundle.MainFieldsetTitle}"> 
+
+
+
+
+
+
+
+                    <comp:inputText 	nameValue="password" 
+                                     inputValue="#{accountController.selected.password}" 
+                                     labelValue="#{bundle.Account_password}"
+                                     requiredValue="true"
+                                     cssClass="formPanelGrid"
+                                     tooltipLabel=""
+                                     tooltipField="pattern=[a-z] - minLength=20 - maxLength=60"/>
+
+
+                </p:fieldset>
+                <p:fieldset id="emailFieldset" legend="#{bundle.Account_email}"> 
+
+
+
+                    <comp:selectOneMenu nameValue="email" 
+                                        inputValue="#{accountController.selected.email.email}" 
+                                        labelValue="#{bundle.Email_email}"
+                                        itemValues="#{enumUtil.emailTypeValues}"
+                                        requiredValue="true"
+                                        cssClass="formPanelGrid"
+                                        tooltipLabel=""/>
+
+
+
+                    <comp:inputText 	nameValue="password" 
+                                     inputValue="#{accountController.selected.email.password}" 
+                                     labelValue="#{bundle.Email_password}"
+                                     requiredValue="true"
+                                     cssClass="formPanelGrid"
+                                     tooltipLabel=""
+                                     tooltipField="pattern=[a-z] - minLength=20 - maxLength=60"/>
+
+
+                </p:fieldset>
+
+                <p:fieldset id="employeeFieldset" legend="#{bundle.Account_employee}"> 
+                    <h:outputText escape="false" value="#{bundle.ListEmployeeEmpty}" rendered="#{empty employeeController.all}"/>
+                    <p:dataTable rowKey="#{item.id}" rendered="#{not empty employeeController.all}" var="item" value="#{employeeController.all}" selection="#{accountController.selected.employee}">  
+                        <p:column selectionMode="single" style="width:18px" />  
+                        <p:column headerText="#{bundle.Employee_picture}">  
+                            <h:outputText value="#{item.picture}" />
+                        </p:column>
+                        <p:column headerText="#{bundle.Employee_salary}">  
+                            <h:outputText value="#{item.salary}" />
+                        </p:column>
+                    </p:dataTable> 
+                </p:fieldset>
+
+            </p:panel>
+        </ui:define>
+        <ui:define name="buttons">
+            <h:panelGrid columns="3">
+                <p:commandButton 	ajax="false" icon="ui-icon-disk"
+                                  update="mainPanel" 
+                                  actionListener="#{accountController.update}" 
+                                  value="#{bundle.SaveLink}" />
+                <p:commandButton 	ajax="false" icon="ui-icon-zoomin"
+                                  action="View" 
+                                  value="#{bundle.ViewLink}"/>
+                <p:commandButton 	ajax="false" icon="ui-icon-search"
+                                  action="#{accountController.prepareList}" 
+                                  value="#{bundle.AccountShowAllLink}" 
+                                  immediate="true"/>
+            </h:panelGrid>
+        </ui:define>
+        <ui:define name="dialogs">
+
+
+
+
+        </ui:define>
+    </ui:composition>
+</html>

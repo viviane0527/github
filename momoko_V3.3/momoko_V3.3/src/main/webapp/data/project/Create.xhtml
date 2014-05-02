@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:comp="http://java.sun.com/jsf/composite/ezcomp"
+	  xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="body">
+            <h:form>
+			<p:panel id="mainPanel" styleClass="mainPanel" header="#{bundle.CreateProjectTitle}">
+				<p:fieldset id="mainFieldset" legend="#{bundle.MainFieldsetTitle}"> 
+				
+				
+				<comp:inputText 	nameValue="name" 
+									inputValue="#{projectController.selected.name}" 
+									labelValue="#{bundle.Project_name}"
+									requiredValue="false"
+									cssClass="formPanelGrid"
+									tooltipLabel=""
+									tooltipField="pattern=([A-Z]|[a-z]|[0-9])* - minLength=0 - maxLength=56"/>
+				
+				
+				</p:fieldset>
+				<p:fieldset id="leadFieldset" legend="#{bundle.Project_lead}"> 
+				    <h:outputText escape="false" value="#{bundle.ListManagerEmpty}" rendered="#{empty managerController.all}"/>
+				    <p:dataTable rowKey="#{item.id}" rendered="#{not empty managerController.all}" var="item" value="#{managerController.all}" selection="#{projectController.selected.lead}">  
+						<p:column selectionMode="single" style="width:18px" />  
+				    </p:dataTable> 
+				</p:fieldset>
+				<p:fieldset id="membersFieldset" legend="#{bundle.Project_members}"> 
+				    <h:outputText escape="false" value="#{bundle.ListEmployeeEmpty}" rendered="#{empty employeeController.all}"/>
+				    <p:dataTable rowKey="#{item.id}" rendered="#{not empty employeeController.all}" var="item" value="#{employeeController.all}" selection="#{projectController.selected.members}">  
+						<p:column selectionMode="multiple" style="width:18px" />  
+				        <p:column headerText="#{bundle.Employee_picture}">  
+				            <h:outputText value="#{item.picture}" />
+				        </p:column>
+				        <p:column headerText="#{bundle.Employee_salary}">  
+				            <h:outputText value="#{item.salary}" />
+				        </p:column>
+				    </p:dataTable> 
+				</p:fieldset>
+				
+			 </p:panel>
+            </h:form>
+		</ui:define>
+		<ui:define name="buttons">
+                    <h:form>
+	             <h:panelGrid columns="3">
+	                <p:commandButton 	ajax="false" icon="ui-icon-disk"
+										update="mainPanel" 
+										actionListener="#{projectController.create}"
+										value="#{bundle.SaveLink}" />
+	                <p:commandButton 	ajax="false" icon="ui-icon-search"
+										action="#{projectController.prepareList}" 
+										value="#{bundle.ProjectShowAllLink}" 
+										immediate="true"/>
+	                <p:commandButton 	ajax="false" icon="ui-icon-refresh"
+										actionListener="#{projectController.prepareCreate}" 
+										value="#{bundle.ResetLink}" 
+										immediate="true">
+	                              <p:resetInput target="mainPanel" />  
+	                </p:commandButton> 
+				</h:panelGrid>
+                    </h:form>
+        </ui:define>
+        <ui:define name="dialogs">
+			
+			
+		</ui:define>
+    </ui:composition>
+</html>

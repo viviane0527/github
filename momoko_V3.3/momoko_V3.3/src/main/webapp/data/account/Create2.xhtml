@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:comp="http://ezcomp.at/taglib"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateAccountTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:form>
+                <h:panelGrid id="mainPanel" columns="2">
+                    <h:outputLabel value="#{bundle.CreateAccountLabel_email}" for="email" />
+                    <h:selectOneMenu id="email" value="#{accountController.selected.email}" title="#{bundle.CreateAccountTitle_email}" >
+                        <f:selectItems value="#{emailController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateAccountLabel_employee}" for="employee" />
+                    <h:selectOneMenu id="employee" value="#{accountController.selected.employee}" title="#{bundle.CreateAccountTitle_employee}" >
+                        <f:selectItems value="#{employeeController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateAccountLabel_login}" for="login" />
+                    <h:inputText id="login" value="#{accountController.selected.login}" title="#{bundle.CreateAccountTitle_login}" />
+                    <h:outputLabel for="pwd1" value="#{bundle.CreateAccountLabel_password} 1: *" />  
+                    <p:password id="pwd1" value="#{accountController.selected.password}" title="#{bundle.CreateAccountTitle_password}" match="pwd2" label="Password 1" required="true"/>  
+
+                    <h:outputLabel for="pwd2" value="#{bundle.CreateAccountLabel_password} 2: *" />  
+                    <p:password id="pwd2" value="#{accountController.selected.password}" label="Password 2" required="true"/> 
+
+                    <h:outputLabel value="#{bundle.CreateAccountLabel_checkNewEmailEvery}" for="checkNewEmailEvery" />
+                    <h:inputText id="checkNewEmailEvery" value="#{accountController.selected.checkNewEmailEvery}" title="#{bundle.CreateAccountTitle_checkNewEmailEvery}" required="true" requiredMessage="#{bundle.CreateAccountRequiredMessage_checkNewEmailEvery}"/>
+                    <h:outputLabel value="#{bundle.CreateAccountLabel_language}" for="language" />
+                    <h:inputText id="language" value="#{accountController.selected.language}" title="#{bundle.CreateAccountTitle_language}" />
+                    <h:outputLabel value="#{bundle.CreateAccountLabel_removedJunkMailAfter}" for="removedJunkMailAfter" />
+                    <h:inputText id="removedJunkMailAfter" value="#{accountController.selected.removedJunkMailAfter}" title="#{bundle.CreateAccountTitle_removedJunkMailAfter}" required="true" requiredMessage="#{bundle.CreateAccountRequiredMessage_removedJunkMailAfter}"/>
+                    <h:outputLabel value="#{bundle.CreateAccountLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{accountController.selected.id}" title="#{bundle.CreateAccountTitle_id}" />
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{accountController.create}" value="#{bundle.CreateAccountSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{accountController.prepareList}" value="#{bundle.CreateAccountShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateAccountIndexLink}"/>
+
+
+                <p:panelGrid columns="3">
+                    <p:commandButton 	ajax="false" icon="ui-icon-disk"
+                                      update="mainPanel" 
+                                      actionListener="#{accountController.create}"
+                                      value="#{bundle.SaveLink}" />
+                    <p:commandButton 	ajax="false" icon="ui-icon-search"
+                                      action="#{accountController.prepareList}" 
+                                      value="#{bundle.AccountShowAllLink}" 
+                                      immediate="true"/>
+                    <p:commandButton 	ajax="false" icon="ui-icon-refresh"
+                                      actionListener="#{accountController.prepareCreate}" 
+                                      value="#{bundle.ResetLink}" 
+                                      immediate="true">
+                        <p:resetInput target="mainPanel" />  
+                    </p:commandButton> 
+                </p:panelGrid>
+            </h:form>
+        </ui:define>
+
+    </ui:composition>
+</html>

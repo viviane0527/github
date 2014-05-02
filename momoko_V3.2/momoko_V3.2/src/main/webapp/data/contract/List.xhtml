@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListContractTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:form styleClass="jsfcrud_list_form">
+                <h:panelGroup id="messagePanel" layout="block">
+                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                </h:panelGroup>
+                <h:outputText escape="false" value="#{bundle.ListContractEmpty}" rendered="#{contractController.items.rowCount == 0}"/>
+                <h:panelGroup rendered="#{contractController.items.rowCount > 0}">
+                    <h:outputText value="#{contractController.pagination.pageFirstItem + 1}..#{contractController.pagination.pageLastItem + 1}/#{contractController.pagination.itemsCount}"/>&nbsp;
+                    <h:commandLink action="#{contractController.previous}" value="#{bundle.Previous} #{contractController.pagination.pageSize}" rendered="#{contractController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink action="#{contractController.next}" value="#{bundle.Next} #{contractController.pagination.pageSize}" rendered="#{contractController.pagination.hasNextPage}"/>&nbsp;
+                    <h:dataTable value="#{contractController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListContractTitle_salary}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.salary}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListContractTitle_startAt}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.startAt}">
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListContractTitle_employees}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.employees}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListContractTitle_employer}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.employer}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListContractTitle_id}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.id}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="&nbsp;"/>
+                            </f:facet>
+                            <h:commandLink action="#{contractController.prepareView}" value="#{bundle.ListContractViewLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{contractController.prepareEdit}" value="#{bundle.ListContractEditLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{contractController.destroy}" value="#{bundle.ListContractDestroyLink}"/>
+                        </h:column>
+                    </h:dataTable>
+                </h:panelGroup>
+                <br />
+                <h:commandLink action="#{contractController.prepareCreate}" value="#{bundle.ListContractCreateLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ListContractIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

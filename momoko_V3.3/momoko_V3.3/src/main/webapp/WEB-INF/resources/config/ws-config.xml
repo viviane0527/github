@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <pageSize>10</pageSize>
+    <paramSeparator>,</paramSeparator>
+    <linkPreviousName>prev</linkPreviousName>
+    <linkNextName>next</linkNextName>
+</config>

@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:mtl="http://www.eclipse.org/acceleo/mtl/3.0" xmlns:ocl.ecore="http://www.eclipse.org/ocl/1.1.0/Ecore">
+  <mtl:Module name="generatePom" nsURI="com::thales::momoko2::pim::uml2::gen::files::configuration::generatePom" startHeaderPosition="29" endHeaderPosition="156">
+    <input>
+      <takesTypesFrom href="http://www.eclipse.org/uml2/4.0.0/UML#/"/>
+    </input>
+    <ownedModuleElement xsi:type="mtl:Template" name="generatePom" visibility="Public">
+      <body xsi:type="mtl:FileBlock" openMode="OverWrite">
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;>&#xA;    &lt;modelVersion>4.0.0&lt;/modelVersion>&#xA;&#xA;    &lt;groupId>com.thales&lt;/groupId>&#xA;    &lt;artifactId>"/>
+        <body xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/String_Class/toLowerFirst">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <source xsi:type="ocl.ecore:PropertyCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="aModel" referredVariable="/0/generatePom/aModel">
+              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+            </source>
+            <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/4.0.0/UML#//NamedElement/name"/>
+          </source>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&lt;/artifactId>&#xA;    &lt;version>1.0-SNAPSHOT&lt;/version>&#xA;    &lt;packaging>war&lt;/packaging>&#xA;&#xA;    &lt;name>"/>
+        <body xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/String_Class/toLowerFirst">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <source xsi:type="ocl.ecore:PropertyCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="aModel" referredVariable="/0/generatePom/aModel">
+              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+            </source>
+            <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/4.0.0/UML#//NamedElement/name"/>
+          </source>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&lt;/name>&#xA;&#xA;    &lt;properties>&#xA;        &lt;endorsed.dir>${project.build.directory}/endorsed&lt;/endorsed.dir>&#xA;        &lt;project.build.sourceEncoding>UTF-8&lt;/project.build.sourceEncoding>&#xA;    &lt;/properties>&#xA;    &lt;repositories>&#xA;        &lt;repository>&#xA;            &lt;id>eclipselink&lt;/id>&#xA;            &lt;url>http://download.eclipse.org/rt/eclipselink/maven.repo/&lt;/url>&#xA;        &lt;/repository>&#xA;        &lt;repository>  &#xA;            &lt;id>PrimeFaces-maven-lib&lt;/id>  &#xA;            &lt;name>PrimeFaces Maven Repository&lt;/name>  &#xA;            &lt;url>http://repository.primefaces.org&lt;/url>  &#xA;            &lt;layout>default&lt;/layout>  &#xA;        &lt;/repository>  &#xA;    &lt;/repositories>&#xA;    &lt;dependencies>&#xA;        &lt;dependency>&#xA;            &lt;groupId>com.thales&lt;/groupId>&#xA;            &lt;artifactId>queryBuilder&lt;/artifactId>&#xA;            &lt;version>1.0-SNAPSHOT&lt;/version>&#xA;            &lt;type>jar&lt;/type>&#xA;        &lt;/dependency>&#xA;        &lt;dependency>&#xA;            &lt;groupId>org.eclipse.persistence&lt;/groupId>&#xA;            &lt;artifactId>eclipselink&lt;/artifactId>&#xA;            &lt;version>2.5.1&lt;/version>&#xA;            &lt;scope>provided&lt;/scope>&#xA;        &lt;/dependency>&#xA;        &lt;dependency>&#xA;            &lt;groupId>org.eclipse.persistence&lt;/groupId>&#xA;            &lt;artifactId>javax.persistence&lt;/artifactId>&#xA;            &lt;version>2.1.0-SNAPSHOT&lt;/version>&#xA;            &lt;scope>provided&lt;/scope>&#xA;        &lt;/dependency>&#xA;        &lt;dependency>&#xA;            &lt;groupId>org.eclipse.persistence&lt;/groupId>&#xA;            &lt;artifactId>org.eclipse.persistence.jpa.modelgen.processor&lt;/artifactId>&#xA;            &lt;version>2.5.1&lt;/version>&#xA;            &lt;scope>provided&lt;/scope>&#xA;        &lt;/dependency>&#xA;        &lt;dependency>&#xA;            &lt;groupId>javax&lt;/groupId>&#xA;            &lt;artifactId>javaee-web-api&lt;/artifactId>&#xA;            &lt;version>7.0&lt;/version>&#xA;            &lt;scope>provided&lt;/scope>&#xA;        &lt;/dependency>&#xA;        &lt;dependency>&#xA;            &lt;groupId>org.primefaces&lt;/groupId>&#xA;            &lt;artifactId>primefaces&lt;/artifactId>&#xA;            &lt;version>4.0&lt;/version>&#xA;        &lt;/dependency>&#xA;        &lt;dependency>&#xA;    &lt;groupId>commons-fileupload&lt;/groupId>&#xA;    &lt;artifactId>commons-fileupload&lt;/artifactId>&#xA;    &lt;version>1.2.2&lt;/version>&#xA;&lt;/dependency>&#xA;&#xA;&lt;dependency>&#xA;    &lt;groupId>commons-io&lt;/groupId>&#xA;    &lt;artifactId>commons-io&lt;/artifactId>&#xA;    &lt;version>2.4&lt;/version>&#xA;&lt;/dependency>&#xA;    &lt;/dependencies>&#xA;&#xA;    &lt;build>&#xA;        &lt;plugins>&#xA;            &lt;plugin>&#xA;                &lt;groupId>org.apache.maven.plugins&lt;/groupId>&#xA;                &lt;artifactId>maven-compiler-plugin&lt;/artifactId>&#xA;                &lt;version>3.1&lt;/version>&#xA;                &lt;configuration>&#xA;                    &lt;source>1.7&lt;/source>&#xA;                    &lt;target>1.7&lt;/target>&#xA;                    &lt;compilerArguments>&#xA;                        &lt;endorseddirs>${endorsed.dir}&lt;/endorseddirs>&#xA;                    &lt;/compilerArguments>&#xA;                &lt;/configuration>&#xA;            &lt;/plugin>&#xA;            &lt;plugin>&#xA;                &lt;groupId>org.apache.maven.plugins&lt;/groupId>&#xA;                &lt;artifactId>maven-war-plugin&lt;/artifactId>&#xA;                &lt;version>2.3&lt;/version>&#xA;                &lt;configuration>&#xA;                    &lt;failOnMissingWebXml>false&lt;/failOnMissingWebXml>&#xA;                &lt;/configuration>&#xA;            &lt;/plugin>&#xA;            &lt;plugin>&#xA;                &lt;groupId>org.apache.maven.plugins&lt;/groupId>&#xA;                &lt;artifactId>maven-dependency-plugin&lt;/artifactId>&#xA;                &lt;version>2.6&lt;/version>&#xA;                &lt;executions>&#xA;                    &lt;execution>&#xA;                        &lt;phase>validate&lt;/phase>&#xA;                        &lt;goals>&#xA;                            &lt;goal>copy&lt;/goal>&#xA;                        &lt;/goals>&#xA;                        &lt;configuration>&#xA;                            &lt;outputDirectory>${endorsed.dir}&lt;/outputDirectory>&#xA;                            &lt;silent>true&lt;/silent>&#xA;                            &lt;artifactItems>&#xA;                                &lt;artifactItem>&#xA;                                    &lt;groupId>javax&lt;/groupId>&#xA;                                    &lt;artifactId>javaee-endorsed-api&lt;/artifactId>&#xA;                                    &lt;version>7.0&lt;/version>&#xA;                                    &lt;type>jar&lt;/type>&#xA;                                &lt;/artifactItem>&#xA;                            &lt;/artifactItems>&#xA;                        &lt;/configuration>&#xA;                    &lt;/execution>&#xA;                &lt;/executions>&#xA;            &lt;/plugin>&#xA;        &lt;/plugins>&#xA;    &lt;/build>&#xA;&lt;/project>&#xA;"/>
+        <fileUrl xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="pom.xml">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </fileUrl>
+        <charset xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="UTF-8">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </charset>
+      </body>
+      <documentation xsi:type="mtl:ModuleElementDocumentation">
+        <body startPosition="95" endPosition="156" value="&#xA;This template generate the Beans.xml.&#xA;@param aModel&#xA;&#xA;"/>
+        <parametersDocumentation name="aModel">
+          <body value=""/>
+        </parametersDocumentation>
+      </documentation>
+      <parameter name="aModel">
+        <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+      </parameter>
+    </ownedModuleElement>
+  </mtl:Module>
+  <ecore:EPackage name="additions">
+    <eClassifiers xsi:type="ecore:EClass" name="String_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+      </eAnnotations>
+      <eOperations name="toLowerFirst">
+        <eAnnotations source="MTL"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Integer_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Real_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Real"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="EObject_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+      </eAnnotations>
+      <eOperations name="generatePom">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/generatePom"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="aModel">
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+        </eParameters>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="OclAny_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Collection(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Collection(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Sequence(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Sequence(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="OrderedSet(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OrderedSet(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Model_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+      </eAnnotations>
+    </eClassifiers>
+  </ecore:EPackage>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ecore:EAnnotation source="positions">
+    <eAnnotations source="positions.0" references="/0/generatePom">
+      <details key="start" value="159"/>
+      <details key="end" value="5034"/>
+      <details key="line" value="8"/>
+    </eAnnotations>
+    <eAnnotations source="positions.1" references="/0/generatePom/%">
+      <details key="start" value="205"/>
+      <details key="end" value="5022"/>
+      <details key="line" value="9"/>
+    </eAnnotations>
+    <eAnnotations source="positions.2" references="/0/generatePom/%/%">
+      <details key="start" value="240"/>
+      <details key="end" value="574"/>
+      <details key="line" value="10"/>
+    </eAnnotations>
+    <eAnnotations source="positions.3" references="/0/generatePom/%/%.1">
+      <details key="start" value="575"/>
+      <details key="end" value="601"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.4" references="/0/generatePom/%/%.1/%">
+      <details key="start" value="575"/>
+      <details key="end" value="586"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.5" references="/0/generatePom/%/%.1/%/aModel">
+      <details key="start" value="575"/>
+      <details key="end" value="581"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.6" references="/0/generatePom/%/%.2">
+      <details key="start" value="603"/>
+      <details key="end" value="695"/>
+      <details key="line" value="15"/>
+    </eAnnotations>
+    <eAnnotations source="positions.7" references="/0/generatePom/%/%.3">
+      <details key="start" value="696"/>
+      <details key="end" value="722"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.8" references="/0/generatePom/%/%.3/%">
+      <details key="start" value="696"/>
+      <details key="end" value="707"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.9" references="/0/generatePom/%/%.3/%/aModel">
+      <details key="start" value="696"/>
+      <details key="end" value="702"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.10" references="/0/generatePom/%/%.4">
+      <details key="start" value="724"/>
+      <details key="end" value="5015"/>
+      <details key="line" value="19"/>
+    </eAnnotations>
+    <eAnnotations source="positions.11" references="/0/generatePom/%/%.5">
+      <details key="start" value="212"/>
+      <details key="end" value="221"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.12" references="/0/generatePom/%/%.6">
+      <details key="start" value="230"/>
+      <details key="end" value="237"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.13" references="/0/generatePom/%.1">
+      <details key="start" value="92"/>
+      <details key="end" value="158"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.14" references="/0/generatePom/%.1/aModel">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.15" references="/0/generatePom/aModel">
+      <details key="start" value="188"/>
+      <details key="end" value="202"/>
+      <details key="line" value="8"/>
+    </eAnnotations>
+  </ecore:EAnnotation>
+</xmi:XMI>

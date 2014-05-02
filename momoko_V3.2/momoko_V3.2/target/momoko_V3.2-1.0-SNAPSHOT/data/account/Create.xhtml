@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateAccountTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateAccountLabel_email}" for="email" />
+                    <h:selectOneMenu id="email" value="#{accountController.selected.email}" title="#{bundle.CreateAccountTitle_email}" >
+                        <f:selectItems value="#{emailController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateAccountLabel_employee}" for="employee" />
+                    <h:selectOneMenu id="employee" value="#{accountController.selected.employee}" title="#{bundle.CreateAccountTitle_employee}" >
+                        <f:selectItems value="#{employeeController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateAccountLabel_login}" for="login" />
+                    <h:inputText id="login" value="#{accountController.selected.login}" title="#{bundle.CreateAccountTitle_login}" />
+                    <h:outputLabel value="#{bundle.CreateAccountLabel_password}" for="password" />
+                    <h:inputText id="password" value="#{accountController.selected.password}" title="#{bundle.CreateAccountTitle_password}" />
+                    <h:outputLabel value="#{bundle.CreateAccountLabel_checkNewEmailEvery}" for="checkNewEmailEvery" />
+                    <h:inputText id="checkNewEmailEvery" value="#{accountController.selected.checkNewEmailEvery}" title="#{bundle.CreateAccountTitle_checkNewEmailEvery}" required="true" requiredMessage="#{bundle.CreateAccountRequiredMessage_checkNewEmailEvery}"/>
+                    <h:outputLabel value="#{bundle.CreateAccountLabel_language}" for="language" />
+                    <h:inputText id="language" value="#{accountController.selected.language}" title="#{bundle.CreateAccountTitle_language}" />
+                    <h:outputLabel value="#{bundle.CreateAccountLabel_removedJunkMailAfter}" for="removedJunkMailAfter" />
+                    <h:inputText id="removedJunkMailAfter" value="#{accountController.selected.removedJunkMailAfter}" title="#{bundle.CreateAccountTitle_removedJunkMailAfter}" required="true" requiredMessage="#{bundle.CreateAccountRequiredMessage_removedJunkMailAfter}"/>
+                    <h:outputLabel value="#{bundle.CreateAccountLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{accountController.selected.id}" title="#{bundle.CreateAccountTitle_id}" />
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{accountController.create}" value="#{bundle.CreateAccountSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{accountController.prepareList}" value="#{bundle.CreateAccountShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateAccountIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

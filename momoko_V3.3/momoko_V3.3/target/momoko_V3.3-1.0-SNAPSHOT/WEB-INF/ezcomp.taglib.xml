@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+
+<facelet-taglib version="2.2"
+        xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facelettaglibrary_2_2.xsd">
+
+ <namespace>http://ezcomp.at/taglib</namespace> 
+ <composite-library-name>ezcomp</composite-library-name> 
+ <tag>
+    <tag-name>boolCheckbox</tag-name>
+    <component>
+      <resource-id>
+        ezcomp/boolCheckbox.xhtml
+      </resource-id>
+    </component>
+  </tag>
+  <tag>
+    <tag-name>dateCalendar</tag-name>
+    <component>
+      <resource-id>
+        ezcomp/dateCalendar.xhtml
+      </resource-id>
+    </component>
+  </tag>
+    <tag>
+    <tag-name>inputText</tag-name>
+    <component>
+      <resource-id>
+        ezcomp/inputText.xhtml
+      </resource-id>
+    </component>
+  </tag>
+    <tag>
+    <tag-name>password</tag-name>
+    <component>
+      <resource-id>
+        ezcomp/password.xhtml
+      </resource-id>
+    </component>
+  </tag>
+    <tag>
+    <tag-name>selectOneMenu</tag-name>
+    <component>
+      <resource-id>
+        ezcomp/selectOneMenu.xhtml
+      </resource-id>
+    </component>
+  </tag>
+    <tag>
+    <tag-name>spinner</tag-name>
+    <component>
+      <resource-id>
+        ezcomp/spinner.xhtml
+      </resource-id>
+    </component>
+  </tag>
+    <tag>
+    <tag-name>timeCalendar</tag-name>
+    <component>
+      <resource-id>
+        ezcomp/timeCalendar.xhtml
+      </resource-id>
+    </component>
+  </tag>
+ </facelet-taglib> 

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:comp="http://java.sun.com/jsf/composite/ezcomp"
+	  xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="body">
+                <p:panel id="mainPanel" styleClass="mainPanel" header="#{bundle.EditManagerTitle}">
+                	<p:fieldset id="mainFieldset" legend="#{bundle.MainFieldsetTitle}"> 
+                	</p:fieldset>
+                	<p:fieldset id="projectsFieldset" legend="#{bundle.Manager_projects}"> 
+                	    <h:outputText escape="false" value="#{bundle.ListProjectEmpty}" rendered="#{empty projectController.all}"/>
+                	    <p:dataTable rowKey="#{item.id}" rendered="#{not empty projectController.all}" var="item" value="#{projectController.all}" selection="#{managerController.selected.projects}">  
+                			<p:column selectionMode="multiple" style="width:18px" />  
+                	        <p:column headerText="#{bundle.Project_name}">  
+                	            <h:outputText value="#{item.name}" />
+                	        </p:column>
+                	    </p:dataTable> 
+                	</p:fieldset>
+                	<p:fieldset id="teamsFieldset" legend="#{bundle.Manager_teams}"> 
+                	    <h:outputText escape="false" value="#{bundle.ListEmployeeEmpty}" rendered="#{empty employeeController.all}"/>
+                	    <p:dataTable rowKey="#{item.id}" rendered="#{not empty employeeController.all}" var="item" value="#{employeeController.all}" selection="#{managerController.selected.teams}">  
+                			<p:column selectionMode="multiple" style="width:18px" />  
+                	        <p:column headerText="#{bundle.Employee_picture}">  
+                	            <h:outputText value="#{item.picture}" />
+                	        </p:column>
+                	        <p:column headerText="#{bundle.Employee_salary}">  
+                	            <h:outputText value="#{item.salary}" />
+                	        </p:column>
+                	    </p:dataTable> 
+                	</p:fieldset>
+                	
+                 </p:panel>
+        </ui:define>
+        <ui:define name="buttons">
+			<h:panelGrid columns="3">
+                <p:commandButton 	ajax="false" icon="ui-icon-disk"
+									update="mainPanel" 
+									actionListener="#{managerController.update}" 
+									value="#{bundle.SaveLink}" />
+				<p:commandButton 	ajax="false" icon="ui-icon-zoomin"
+									action="View" 
+									value="#{bundle.ViewLink}"/>
+                <p:commandButton 	ajax="false" icon="ui-icon-search"
+									action="#{managerController.prepareList}" 
+									value="#{bundle.ManagerShowAllLink}" 
+									immediate="true"/>
+			</h:panelGrid>
+        </ui:define>
+        <ui:define name="dialogs">
+			
+			
+		</ui:define>
+    </ui:composition>
+</html>

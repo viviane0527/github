@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateContractTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateContractLabel_salary}" for="salary" />
+                    <h:inputText id="salary" value="#{contractController.selected.salary}" title="#{bundle.CreateContractTitle_salary}" />
+                    <h:outputLabel value="#{bundle.CreateContractLabel_startAt}" for="startAt" />
+                    <h:inputText id="startAt" value="#{contractController.selected.startAt}" title="#{bundle.CreateContractTitle_startAt}" >
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.CreateContractLabel_employees}" for="employees" />
+                    <h:selectOneMenu id="employees" value="#{contractController.selected.employees}" title="#{bundle.CreateContractTitle_employees}" >
+                        <f:selectItems value="#{employeeController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateContractLabel_employer}" for="employer" />
+                    <h:selectOneMenu id="employer" value="#{contractController.selected.employer}" title="#{bundle.CreateContractTitle_employer}" >
+                        <f:selectItems value="#{enterpriseController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateContractLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{contractController.selected.id}" title="#{bundle.CreateContractTitle_id}" />
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{contractController.create}" value="#{bundle.CreateContractSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{contractController.prepareList}" value="#{bundle.CreateContractShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateContractIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

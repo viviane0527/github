@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListAccountTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:form id="form">  
+                <p:growl id="messages" showDetail="true"/> 
+                <p:growl id="growl" showDetail="true"/> 
+                <p:dataTable value="#{accountController.items}" var="account" paginator="true" rowKey="#{account.email}" rows="10"  
+                             id="accountTable" scrollable="true" 
+                             editable="true"
+                             resizableColumns="true" 
+                             
+                             paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}">  
+
+
+                    <p:ajax event="rowEdit" listener="#{accountController.onEdit}" update=":form:messages" /> 
+                    <p:ajax event="colResize" update=":form:growl" listener="#{accountController.onResize}"/>
+                    <p:column headerText="Email" sortBy="email" filterBy="#{account.email}" filterMatchMode="contains" width="200">  
+                        <p:cellEditor>
+                            <f:facet name="output">
+                                <h:outputText value="#{account.email}" /> 
+                            </f:facet>
+                            <f:facet name="input">
+                                <h:inputText value="#{accountController.selected.email}" /> 
+                            </f:facet>
+                        </p:cellEditor>
+
+                    </p:column>  
+
+                    <p:column headerText="Employee" sortBy="employee" filterBy="#{account.employee}" width="200">  
+                        <p:cellEditor>
+                            <f:facet name="output">
+                                <h:outputText value="#{account.employee}" />  
+                            </f:facet>
+                            <f:facet name="input">
+                                <h:outputText value="#{accountController.selected.employee}" />  
+                            </f:facet>
+                        </p:cellEditor>
+
+                    </p:column>  
+
+                    <p:column headerText="Login" sortBy="login" filterBy="#{account.login}" width="200">  
+                        <p:cellEditor>
+                            <f:facet name="output">
+                                <h:outputText value="#{account.login}" />
+                            </f:facet>
+                            <f:facet name="input">
+                                <h:outputText value="#{accountController.selected.login}" />
+                            </f:facet>
+                        </p:cellEditor>
+
+                    </p:column> 
+
+                    <p:column headerText="Password" sortBy="password" filterBy="#{account.password}" width="200"> 
+                        <p:cellEditor>
+                            <f:facet name="output">
+                                <h:outputText value="#{account.password}" /> 
+                            </f:facet>
+                            <f:facet name="input">
+                                <h:outputText value="#{accountController.selected.password}" /> 
+                            </f:facet>
+                        </p:cellEditor>
+
+                    </p:column>
+
+                    <p:column width="200">
+                        <p:rowEditor />
+                    </p:column>
+
+                    <p:column width="200">
+                        <f:facet name="header">
+                            <h:outputText value="&nbsp;"/>
+                        </f:facet>
+                        <h:commandLink action="#{accountController.prepareView}" value="#{bundle.ListAccountViewLink}"/>
+                        <h:outputText value=" "/>
+                        <h:commandLink action="#{accountController.prepareEdit}" value="#{bundle.ListAccountEditLink}"/>
+                        <h:outputText value=" "/>
+                        <h:commandLink action="#{accountController.destroy}" value="#{bundle.ListAccountDestroyLink}"/>
+                    </p:column>
+
+
+                </p:dataTable>  
+
+                <p:dialog header="Account Detail" widgetVar="accountDialog" resizable="false"  
+                          showEffect="explode" hideEffect="explode">  
+
+                    <h:panelGrid id="display" columns="2" cellpadding="4">  
+
+                        <h:outputText value="Email:" />  
+                        <h:outputText value="#{accountController.selected.email}" style="font-weight:bold"/>  
+
+                        <h:outputText value="Employee:" />  
+                        <h:outputText value="#{accountController.selected.employee}" style="font-weight:bold"/>  
+
+                        <h:outputText value="login:" />  
+                        <h:outputText value="#{accountController.selected.login}" style="font-weight:bold"/>  
+
+                        <h:outputText value="Password:" />  
+                        <h:outputText value="#{accountController.selected.password}" style="font-weight:bold"/>  
+                    </h:panelGrid>  
+                </p:dialog>  
+                <br />
+               
+            </h:form>  
+        </ui:define>
+    </ui:composition>
+
+</html>

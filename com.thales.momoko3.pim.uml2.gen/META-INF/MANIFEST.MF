@@ -1,0 +1,31 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Acceleo Gen Module Runtime Plug-in
+Bundle-SymbolicName: com.thales.momoko3.pim.uml2.gen
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: com.thales.momoko2.pim.uml2.gen.Activator
+Bundle-Vendor: Eclipse Modeling Project
+Require-Bundle: org.eclipse.core.runtime, 
+ org.eclipse.uml2.uml, 
+ org.eclipse.emf.ecore,
+ org.eclipse.emf.ecore.xmi,
+ org.eclipse.ocl,
+ org.eclipse.ocl.ecore,
+ org.eclipse.acceleo.common;bundle-version="3.2.2",
+ org.eclipse.acceleo.parser;bundle-version="3.2.2";resolution:=optional,
+ org.eclipse.acceleo.model;bundle-version="3.2.2",
+ org.eclipse.acceleo.profiler;bundle-version="3.2.2",
+ org.eclipse.acceleo.engine;bundle-version="3.2.2",
+ com.google.guava;bundle-version="10.0.1"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-ActivationPolicy: lazy
+Eclipse-LazyStart: true
+Export-Package: com.thales.momoko2.pim.uml2.gen.main;
+                uses:="org.eclipse.emf.ecore.resource,
+   				org.eclipse.emf.ecore,
+  				org.eclipse.emf.common.util,
+   				org.eclipse.acceleo.engine.generation.strategy,
+   				org.eclipse.acceleo.engine.service",
+ 				com.thales.momoko2.pim.uml2.gen.services;
+ 				uses:="org.eclipse.uml2.uml"
+

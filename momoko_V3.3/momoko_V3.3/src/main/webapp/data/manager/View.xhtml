@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:comp="http://java.sun.com/jsf/composite/ezcomp"
+	  xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="body">
+        	<p:panel id="mainPanel" styleClass="mainPanel" header="#{bundle.ViewManagerTitle}"> 
+        		<p:fieldset id="mainFieldset" legend="#{bundle.MainFieldsetTitle}"> 
+        			<h:panelGrid columns="2" styleClass="viewPanelGrid">
+        			</h:panelGrid>
+        		</p:fieldset>
+        		
+        	 </p:panel>
+		</ui:define>
+        <ui:define name="buttons">
+			<h:panelGrid columns="5">
+                <p:commandButton 	ajax="false" icon="ui-icon-trash"
+									update="mainPanel" 
+									actionListener="#{managerController.destroyAndView}" 
+									value="#{bundle.DestroyLink}" />
+				<p:commandButton 	ajax="false" icon="ui-icon-pencil"
+									action="Edit" 
+									value="#{bundle.EditLink}"/>
+                <p:commandButton 	ajax="false" icon="ui-icon-document"
+									action="#{managerController.prepareCreate}" 
+									value="#{bundle.ManagerCreateLink}"
+									immediate="true"/>
+                <p:commandButton 	ajax="false" icon="ui-icon-search"
+									action="#{managerController.prepareList}" 
+									value="#{bundle.ManagerShowAllLink}" 
+									immediate="true"/>
+ 				<h:commandLink>
+                          			 <p:commandButton value="#{bundle.PrinterLink}" icon="ui-icon-print"/>  
+									<!--<p:printer type="printer" target="mainPanel"
+									fileName="manager" />-->
+				</h:commandLink>
+			</h:panelGrid>
+        </ui:define>
+    </ui:composition>
+</html>

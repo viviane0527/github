@@ -1,0 +1,156 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <f:view contentType="text/html">
+        <h:head>
+            <f:facet name="first">
+                <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
+                <link href="./resources/css/default.css" rel="stylesheet" type="text/css" />
+                <link href="./resources/css/cssLayout.css" rel="stylesheet" type="text/css" />
+                <h:outputStylesheet name="css/jsfcrud.css"/>
+                <h:outputStylesheet name="css/custom.css"/>
+                <title>Momoko</title>
+                <style>
+                    .ui-layout-north {
+                        z-index:20 !important;
+                        overflow:visible !important;;
+                    }
+
+                    .ui-layout-north .ui-layout-unit-content {
+                        overflow:visible !important;
+                    }
+
+                    .ui-layout-west {
+                        z-index:19 !important;
+                        overflow:visible !important;;
+                    }
+
+                    .ui-layout-west .ui-layout-unit-content {
+                        overflow:visible !important;
+                    }
+                </style>
+            </f:facet>
+        </h:head>
+
+        <h:body>
+
+            <p:layout fullPage="true">
+
+                <p:layoutUnit position="north" size="60" resizable="true" closable="true" collapsible="true">
+
+                    <ui:insert name="top">
+                        <h:form id="topForm">
+                            <p:menubar>  
+                                <p:menuitem value="#{bundle.HomeLink}" icon="ui-icon-home" action="/index"/>
+                                <p:menuitem value="#{bundle.ContactLink}" icon="ui-icon-contact" action="/contact"/>
+                                <p:submenu label="#{bundle.ImportExportLink}" icon="ui-icon-document">  
+                                    <p:menuitem value="#{bundle.ImportXMLLink}" icon="ui-icon-document" onclick="dlgImportXML.show();" />
+                                    <p:menuitem value="#{bundle.ExportXMLLink}" icon="ui-icon-document" onclick="dlgExportXML.show();" />
+                                </p:submenu>
+                                <p:submenu label="Test Date">
+                                    <p:menuitem value="#{bundle.AccountLeftLink}" immediate="true" ajax="false" action="#{accountController.create}" icon="ui-icon-extlink"  />
+                                    <p:menuitem value="#{bundle.EmployeeLeftLink}" immediate="true" ajax="false" action="#{employeeController.create}" icon="ui-icon-extlink"  />
+                                    <p:menuitem value="#{bundle.EnterpriseLeftLink}" immediate="true" ajax="false" action="#{enterpriseController.create}" icon="ui-icon-extlink"  />
+                                    <p:menuitem value="#{bundle.ManagerLeftLink}" immediate="true" ajax="false" action="#{managerController.create}" icon="ui-icon-extlink"  />
+                                    <p:menuitem value="#{bundle.PersonLeftLink}" immediate="true" ajax="false" action="#{personController.create}" icon="ui-icon-extlink"  />
+                                    <p:menuitem value="#{bundle.ProjectLeftLink}" immediate="true" ajax="false" action="#{projectController.create}" icon="ui-icon-extlink"  />
+                                </p:submenu>
+                            </p:menubar>  
+                        </h:form>
+                    </ui:insert>
+
+                </p:layoutUnit>
+
+                <p:layoutUnit position="south" size="100" closable="true" collapsible="true">
+                    Footer
+                </p:layoutUnit>
+
+
+                <p:layoutUnit id="layoutUnitLinks" position="west" size="210" resizable="true" closable="true" collapsible="true">  
+                    <ui:insert name="left" >
+                        <h:form id="leftForm">  
+                            <p:panelMenu style="width:190px;" >  
+                                <p:submenu label="#{bundle.AccountLeftLink}">
+                                    <p:menuitem value="#{bundle.ListAccountViewLink}" outcome="/data/account/List" immediate="true" ajax="true" icon="ui-icon-zoomin"/> 
+                                    <p:menuitem value="#{bundle.ListAccountCreateLink}" outcome="/data/account/Create" immediate="true" ajax="true" icon="ui-icon-arrowrefresh-1-s"/> 
+                                    
+                                </p:submenu>
+                                <p:submenu label="#{bundle.EmployeeLeftLink}">
+                                    <p:menuitem value="#{bundle.ListEmployeeViewLink}" outcome="/data/employee/List" immediate="true" ajax="true" icon="ui-icon-zoomin"/> 
+                                    <p:menuitem value="#{bundle.ListEmployeeCreateLink}" outcome="/data/employee/Create" immediate="true" ajax="true" icon="ui-icon-arrowrefresh-1-s"/> 
+                                    
+                                </p:submenu>
+                                <p:submenu label="#{bundle.EnterpriseLeftLink}">
+                                    <p:menuitem value="#{bundle.ListEnterpriseViewLink}" outcome="/data/enterprise/List" immediate="true" ajax="true" icon="ui-icon-zoomin"/> 
+                                    <p:menuitem value="#{bundle.ListEnterpriseCreateLink}" outcome="/data/enterprise/Create" immediate="true" ajax="true" icon="ui-icon-arrowrefresh-1-s"/> 
+                                    
+                                </p:submenu>
+                                <p:submenu label="#{bundle.ManagerLeftLink}">
+                                    <p:menuitem value="#{bundle.ListManagerViewLink}" outcome="/data/manager/List" immediate="true" ajax="true" icon="ui-icon-zoomin"/> 
+                                    <p:menuitem value="#{bundle.ListManagerCreateLink}" outcome="/data/manager/Create" immediate="true" ajax="true" icon="ui-icon-arrowrefresh-1-s"/> 
+                                    
+                                </p:submenu>
+                                <p:submenu label="#{bundle.ProjectLeftLink}">
+                                    <p:menuitem value="#{bundle.ListProjectViewLink}" outcome="/data/project/List" immediate="true" ajax="true" icon="ui-icon-zoomin"/> 
+                                    <p:menuitem value="#{bundle.ListProjectCreateLink}" outcome="/data/project/Create" immediate="true" ajax="true" icon="ui-icon-arrowrefresh-1-s"/> 
+                                    
+                                </p:submenu>
+                                
+                            </p:panelMenu>	
+                        </h:form>  
+                    </ui:insert>
+                </p:layoutUnit>
+
+
+                <p:layoutUnit position="center">
+                    <ui:insert name="content" >
+                        <p:layout>
+
+
+                            <p:layoutUnit position="center" styleClass="nestedUnit" >
+                                <ui:insert name="body" />
+                            </p:layoutUnit>
+
+                            <p:layoutUnit position="south" size="30%" resizable="true"  styleClass="nestedUnit" >
+                                <ui:insert name="buttons" />
+                            </p:layoutUnit>
+
+                            <ui:insert name="dialogs"/>
+                            <ui:insert name="messages" >
+                                <p:growl id="growl" showDetail="true" sticky="true"  autoUpdate="true"/> 
+                            </ui:insert>
+                        </p:layout>
+                    </ui:insert>
+                </p:layoutUnit>
+
+
+
+
+
+
+
+            </p:layout>
+
+
+            <p:dialog id="dialogImportXML" header="#{bundle.ImportXMLLink}" widgetVar="dlgImportXML" modal="true">  
+                <h:form enctype="multipart/form-data">   
+                    <p:fileUpload value="#{ExchangeController.importXmlFile}"  mode="simple"/> 
+                    <p:commandButton value="Submit" ajax="false"/>
+                </h:form>  
+            </p:dialog>
+            <p:dialog id="dialogExportXML" header="#{bundle.ExportXMLLink}" widgetVar="dlgExportXML" modal="true">
+                <h:form id="formExportXML">  
+                    <p:commandButton id="downloadLink" value="Download XML File" ajax="false" icon="ui-icon-arrowthichk-s">  
+                        <p:fileDownload value="#{ExchangeController.exportXmlFile}" />
+                    </p:commandButton>
+                </h:form>
+            </p:dialog>  
+        </h:body>
+
+    </f:view>
+</html>
+

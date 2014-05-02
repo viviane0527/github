@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditEnterpriseTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditEnterpriseLabel_headQuater}" for="headQuater" />
+                    <h:inputText id="headQuater" value="#{enterpriseController.selected.headQuater}" title="#{bundle.EditEnterpriseTitle_headQuater}" />
+                    <h:outputLabel value="#{bundle.EditEnterpriseLabel_logo}" for="logo" />
+                    <h:inputTextarea rows="4" cols="30" id="logo" value="#{enterpriseController.selected.logo}" title="#{bundle.EditEnterpriseTitle_logo}" />
+                    <h:outputLabel value="#{bundle.EditEnterpriseLabel_name}" for="name" />
+                    <h:inputText id="name" value="#{enterpriseController.selected.name}" title="#{bundle.EditEnterpriseTitle_name}" required="true" requiredMessage="#{bundle.EditEnterpriseRequiredMessage_name}"/>
+                    <h:outputLabel value="#{bundle.EditEnterpriseLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{enterpriseController.selected.id}" title="#{bundle.EditEnterpriseTitle_id}" />
+                </h:panelGrid>
+                <h:commandLink action="#{enterpriseController.update}" value="#{bundle.EditEnterpriseSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditEnterpriseViewLink}"/>
+                <br />
+                <h:commandLink action="#{enterpriseController.prepareList}" value="#{bundle.EditEnterpriseShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditEnterpriseIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

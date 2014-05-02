@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:comp="http://java.sun.com/jsf/composite/ezcomp"
+	  xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="body">
+			<p:panel id="mainPanel" styleClass="mainPanel" header="#{bundle.CreatePersonTitle}">
+				<p:fieldset id="mainFieldset" legend="#{bundle.MainFieldsetTitle}"> 
+				<comp:dateCalendar 	nameValue="birthDate" 
+									inputValue="#{personController.selected.birthDate}" 
+									labelValue="#{bundle.Person_birthDate}"
+									requiredValue="true"
+									cssClass="formPanelGrid"
+									tooltipLabel=""/>
+				
+				
+				
+				
+				
+				
+				<comp:inputText 	nameValue="firstName" 
+									inputValue="#{personController.selected.firstName}" 
+									labelValue="#{bundle.Person_firstName}"
+									requiredValue="false"
+									cssClass="formPanelGrid"
+									tooltipLabel=""
+									tooltipField="pattern=([A-Z]|[a-z]|[0-9])* - minLength=0 - maxLength=56"/>
+				
+				
+				
+				
+				<comp:inputText 	nameValue="lastName" 
+									inputValue="#{personController.selected.lastName}" 
+									labelValue="#{bundle.Person_lastName}"
+									requiredValue="false"
+									cssClass="formPanelGrid"
+									tooltipLabel=""
+									tooltipField="pattern=([A-Z]|[a-z]|[0-9])* - minLength=0 - maxLength=56"/>
+				
+				
+				</p:fieldset>
+				<p:fieldset id="addressFieldset" legend="#{bundle.Person_address}"> 
+				
+				
+				<comp:inputText 	nameValue="city" 
+									inputValue="#{personController.selected.address.city}" 
+									labelValue="#{bundle.Address_city}"
+									requiredValue="false"
+									cssClass="formPanelGrid"
+									tooltipLabel=""
+									tooltipField="pattern=([A-Z]|[a-z]|[0-9])* - minLength=0 - maxLength=56"/>
+				
+				
+				
+				
+				<comp:inputText 	nameValue="country" 
+									inputValue="#{personController.selected.address.country}" 
+									labelValue="#{bundle.Address_country}"
+									requiredValue="false"
+									cssClass="formPanelGrid"
+									tooltipLabel=""
+									tooltipField="pattern=([A-Z]|[a-z]|[0-9])* - minLength=0 - maxLength=56"/>
+				
+				
+				
+				
+				<comp:inputText 	nameValue="streetName" 
+									inputValue="#{personController.selected.address.streetName}" 
+									labelValue="#{bundle.Address_streetName}"
+									requiredValue="false"
+									cssClass="formPanelGrid"
+									tooltipLabel=""
+									tooltipField="pattern=([A-Z]|[a-z]|[0-9])* - minLength=0 - maxLength=56"/>
+				
+				
+				
+				
+				
+				
+				
+				</p:fieldset>
+				
+				
+			 </p:panel>
+		</ui:define>
+		<ui:define name="buttons">
+	             <h:panelGrid columns="3">
+	                <p:commandButton 	ajax="false" icon="ui-icon-disk"
+										update="mainPanel" 
+										actionListener="#{personController.create}"
+										value="#{bundle.SaveLink}" />
+	                <p:commandButton 	ajax="false" icon="ui-icon-search"
+										action="#{personController.prepareList}" 
+										value="#{bundle.PersonShowAllLink}" 
+										immediate="true"/>
+	                <p:commandButton 	ajax="false" icon="ui-icon-refresh"
+										actionListener="#{personController.prepareCreate}" 
+										value="#{bundle.ResetLink}" 
+										immediate="true">
+	                              <p:resetInput target="mainPanel" />  
+	                </p:commandButton> 
+				</h:panelGrid>
+        </ui:define>
+        <ui:define name="dialogs">
+			
+			
+			
+			
+		</ui:define>
+    </ui:composition>
+</html>

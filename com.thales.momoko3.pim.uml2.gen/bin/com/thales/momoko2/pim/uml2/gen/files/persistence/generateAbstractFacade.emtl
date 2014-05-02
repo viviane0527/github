@@ -1,0 +1,623 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:mtl="http://www.eclipse.org/acceleo/mtl/3.0" xmlns:ocl.ecore="http://www.eclipse.org/ocl/1.1.0/Ecore">
+  <mtl:Module name="generateAbstractFacade" nsURI="com::thales::momoko2::pim::uml2::gen::files::persistence::generateAbstractFacade" startHeaderPosition="29" endHeaderPosition="179">
+    <input>
+      <takesTypesFrom href="http://www.eclipse.org/uml2/4.0.0/UML#/"/>
+    </input>
+    <imports href="../../request/name/fileNameQueries.emtl#/0"/>
+    <imports href="../../common/imports/classImports.emtl#/0"/>
+    <ownedModuleElement xsi:type="mtl:Template" name="generateAbstractFacade" visibility="Public">
+      <body xsi:type="mtl:FileBlock" openMode="OverWrite">
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="package "/>
+        <body xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/String_Class/toLowerFirst">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <source xsi:type="ocl.ecore:PropertyCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="aModel" referredVariable="/0/generateAbstractFacade/aModel">
+              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+            </source>
+            <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/4.0.0/UML#//NamedElement/name"/>
+          </source>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=".persistence;&#xA;&#xA;import java.util.Iterator;&#xA;import java.util.List;&#xA;import java.util.Map;&#xA;import java.io.Serializable;&#xA;&#xA;import javax.interceptor.Interceptors;&#xA;import javax.persistence.EntityManager;&#xA;import javax.persistence.Query;&#xA;import javax.persistence.criteria.CriteriaBuilder;&#xA;import javax.persistence.criteria.CriteriaQuery;&#xA;import javax.persistence.criteria.Predicate;&#xA;import javax.persistence.criteria.Root;&#xA;&#xA;import org.primefaces.model.SortOrder;&#xA;import com.thales.momoko.querybuilder.QueryBuilder;&#xA;&#xA;import "/>
+        <body xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/String_Class/toLowerFirst">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <source xsi:type="ocl.ecore:PropertyCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="aModel" referredVariable="/0/generateAbstractFacade/aModel">
+              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+            </source>
+            <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/4.0.0/UML#//NamedElement/name"/>
+          </source>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=".ws.tools.Utils;&#xA;import "/>
+        <body xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/String_Class/toLowerFirst">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <source xsi:type="ocl.ecore:PropertyCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="aModel" referredVariable="/0/generateAbstractFacade/aModel">
+              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+            </source>
+            <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/4.0.0/UML#//NamedElement/name"/>
+          </source>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=".ws.tools.QueryExecutor;&#xA;import "/>
+        <body xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/String_Class/toLowerFirst">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <source xsi:type="ocl.ecore:PropertyCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="aModel" referredVariable="/0/generateAbstractFacade/aModel">
+              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+            </source>
+            <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/4.0.0/UML#//NamedElement/name"/>
+          </source>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=".persistence.logs.LogBusinessMethodInterceptor;&#xA;import "/>
+        <body xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/String_Class/toLowerFirst">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <source xsi:type="ocl.ecore:PropertyCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="aModel" referredVariable="/0/generateAbstractFacade/aModel">
+              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+            </source>
+            <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/4.0.0/UML#//NamedElement/name"/>
+          </source>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=".persistence.logs.LogLifeCycleMethodInterceptor;&#xA;&#xA;&#xA;@Interceptors({ &#xA;&#x9;LogLifeCycleMethodInterceptor.class,&#xA;&#x9;LogBusinessMethodInterceptor.class }&#xA;)&#xA;&#xA;public abstract class AbstractFacade&lt;T> implements Serializable {&#xA;    private Class&lt;T> entityClass;&#xA;&#x9;private QueryBuilder qb;&#xA;&#xA;&#x9;public AbstractFacade() { }&#xA;&#xA;    public AbstractFacade(Class entityClass) {&#xA;        this.entityClass = entityClass;&#xA;&#x9;&#x9;this.qb = QueryBuilder.getQueryBuilder();&#xA;    }&#xA;&#xA;    protected abstract EntityManager getEntityManager();&#xA;&#xA;    public void create(T entity) {&#xA;        getEntityManager().persist(entity);&#xA;        getEntityManager().flush();&#xA;        getEntityManager().refresh(entity);&#xA;    }&#xA;&#xA;&#x9;public void edit(T entity) {&#xA;        getEntityManager().merge(entity);&#xA;    }&#xA;&#xA;    public void remove(T entity) {&#xA;        getEntityManager().remove(getEntityManager().merge(entity));&#xA;    }&#xA;&#xA;    public T find(Object id) {&#xA;        return (T) getEntityManager().find(entityClass, id);&#xA;    }&#xA;&#xA;    public List&lt;T> findAll() {&#xA;        javax.persistence.criteria.CriteriaQuery cq = getEntityManager().getCriteriaBuilder().createQuery();&#xA;        cq.select(cq.from(entityClass));&#xA;        return getEntityManager().createQuery(cq).getResultList();&#xA;    }&#xA;&#xA;    public List&lt;T> findRange(int"/>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="[]">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" range) {&#xA;        javax.persistence.criteria.CriteriaQuery cq = getEntityManager().getCriteriaBuilder().createQuery();&#xA;        cq.select(cq.from(entityClass));&#xA;        javax.persistence.Query q = getEntityManager().createQuery(cq);&#xA;        q.setMaxResults(range"/>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="[1]">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" - range"/>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="[0]">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=");&#xA;        q.setFirstResult(range"/>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="[0]">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=");&#xA;        return q.getResultList();&#xA;    }&#xA;&#xA;    public int count() {&#xA;    &#x9;CriteriaBuilder cb = getEntityManager().getCriteriaBuilder();&#xA;        javax.persistence.criteria.CriteriaQuery cq = cb.createQuery();&#xA;        javax.persistence.criteria.Root&lt;T> rt = cq.from(entityClass);&#xA;        cq.select(getEntityManager().getCriteriaBuilder().count(rt));&#xA;        javax.persistence.Query q = getEntityManager().createQuery(cq);&#xA;        return ((Long) q.getSingleResult()).intValue();&#xA;    }  &#xA;    &#xA;    public List&lt;T> load(int first, int pageSize, String sortField,SortOrder sortOrder, Map&lt;String,String> filters)&#xA;    {&#xA;    &#x9;List&lt;T> result = null;&#xA;    &#x9;EntityManager entityManager =getEntityManager();&#xA;    &#x9;CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();&#xA;    &#x9;CriteriaQuery criteriaQuery = criteriaBuilder.createQuery();&#xA;    &#x9;Root&lt;T> entityRoot = criteriaQuery.from(entityClass);        &#x9;&#x9;&#xA;    &#x9;Predicate predicate = criteriaBuilder.conjunction();&#xA;    &#x9;for(Iterator&lt;String> it = filters.keySet().iterator(); it.hasNext();) { &#xA;    &#x9;&#x9;String filterProperty = it.next(); &#xA;    &#x9;&#x9;String filterValue = filters.get(filterProperty);&#xA;    &#x9;&#x9;try {&#xA;&#x9;&#x9;&#x9;&#x9;String fieldValue = String.valueOf(entityRoot.get(filterProperty));&#xA;&#x9;&#x9;&#x9;&#x9;Predicate newPredicate = criteriaBuilder.like(entityRoot.&lt;String>get(filterProperty), filterValue+&quot;%&quot;);&#xA;&#x9;&#x9;&#x9;&#x9;predicate = criteriaBuilder.and(predicate, newPredicate);&#xA;&#x9;&#x9;&#x9;} catch (IllegalArgumentException | SecurityException e) {&#xA;&#x9;&#x9;&#x9;}&#xA;    &#x9;}&#xA;        if(sortField != null){&#xA;            switch (sortOrder.toString()) {&#xA;                case &quot;DESCENDING&quot;:&#xA;                    criteriaQuery.select(entityRoot).where(predicate).orderBy(criteriaBuilder.desc(entityRoot.get(sortField)));&#xA;                    break;&#xA;                case &quot;ASCENDING&quot;:&#xA;                    criteriaQuery.select(entityRoot).where(predicate).orderBy(criteriaBuilder.asc(entityRoot.get(sortField)));&#xA;                    break;&#xA;            }&#xA;        }else&#xA;        {&#xA;        &#x9;criteriaQuery.select(entityRoot).where(predicate);&#xA;        }&#xA;        Query test = entityManager.createQuery(criteriaQuery);&#xA;        result = test.getResultList();&#xA;        return entityManager.createQuery(criteriaQuery)&#xA;        &#x9;&#x9;.setFirstResult(first)&#xA;        &#x9;&#x9;.setMaxResults(pageSize)&#xA;        &#x9;&#x9;.getResultList();&#xA;    }&#xA;&#xA;&#x9;public int count(Map&lt;String, String> conditions) {&#xA;        qb.count().from(&#xA;                entityClass.getCanonicalName(),&#xA;                Utils.getTableAlias(entityClass, 1));&#xA;&#xA;        if (conditions != null) {&#xA;            int i = 0;&#xA;            for (Map.Entry&lt;String, String> entry : conditions.entrySet()) {&#xA;                if (i > 0) {&#xA;                    qb.and(qb.contain(entry.getKey(), entry.getValue().toString()));&#xA;                } else {&#xA;                    qb.contain(entry.getKey(), entry.getValue().toString());&#xA;                }&#xA;                i++;&#xA;            }&#xA;        }&#xA;        return (int) QueryExecutor.getSingleResult(qb, getEntityManager());&#xA;    }&#xA;&#xA;&#xA;&#x9;public List&lt;T> searchRange(&#xA;            int"/>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="[]">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" range,&#xA;            Map&lt;String, Object> conditions,&#xA;            Map&lt;String, Object> orderBy) {&#xA;&#xA;        // select from limit&#xA;        qb.select()&#xA;                .from(entityClass.getCanonicalName(), Utils.getTableAlias(entityClass, 1))&#xA;                .range(range"/>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="[0]">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=", range"/>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="[1]">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" - range"/>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="[0]">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=");&#xA;&#xA;        // where&#xA;        if (conditions != null) {&#xA;            boolean first = true;&#xA;            for (Map.Entry&lt;String, Object> entry : conditions.entrySet()) {&#xA;                if (first) {&#xA;                    qb.and(qb.contain(entry.getKey(), entry.getValue().toString()));&#xA;                    first = false;&#xA;                } else {&#xA;                    qb.contain(entry.getKey(), entry.getValue().toString());&#xA;                }&#xA;            }&#xA;        }&#xA;&#xA;        // order by&#xA;        if (orderBy != null) {&#xA;            if (orderBy.get(&quot;direction&quot;).toString().equalsIgnoreCase(&quot;asc&quot;)) {&#xA;                qb.orderAsc(orderBy.get(&quot;name&quot;).toString());&#xA;            } else {&#xA;                qb.orderDesc(orderBy.get(&quot;name&quot;).toString());&#xA;            }&#xA;        }&#xA;&#xA;        return (List&lt;T>) QueryExecutor.getResultList(qb, getEntityManager());&#xA;    }&#xA;&#xA;    public List&lt;T> searchRangeBySupLevel(&#xA;            int"/>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="[]">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" range,&#xA;            String"/>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="[]">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" inCollection,&#xA;            String linkedNodeName,&#xA;            String inFieldName,&#xA;            Map&lt;String, Object> conditions,&#xA;            Map&lt;String, Object> orderBy) {&#xA;&#xA;        // select from limit&#xA;        qb.select()&#xA;                .from(entityClass.getCanonicalName(), Utils.getTableAlias(entityClass, 1))&#xA;                .range(range"/>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="[0]">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=", range"/>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="[1]">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" - range"/>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="[0]">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=")&#xA;                .innerJoin(linkedNodeName.substring(0, 2), linkedNodeName, inCollection, inFieldName);&#xA;&#xA;        // where&#xA;        if (conditions != null) {&#xA;            boolean first = true;&#xA;            for (Map.Entry&lt;String, Object> entry : conditions.entrySet()) {&#xA;                if (first) {&#xA;                    qb.and(qb.contain(entry.getKey(), entry.getValue().toString()));&#xA;                    first = false;&#xA;                } else {&#xA;                    qb.contain(entry.getKey(), entry.getValue().toString());&#xA;                }&#xA;            }&#xA;        }&#xA;&#xA;        // order by&#xA;        if (orderBy != null) {&#xA;            if (orderBy.get(&quot;direction&quot;).toString().equalsIgnoreCase(&quot;asc&quot;)) {&#xA;                qb.orderAsc(orderBy.get(&quot;name&quot;).toString());&#xA;            } else {&#xA;                qb.orderDesc(orderBy.get(&quot;name&quot;).toString());&#xA;            }&#xA;        }&#xA;&#xA;        return (List&lt;T>) QueryExecutor.getResultList(qb, getEntityManager());&#xA;    }&#xA;&#xA;    public Long countBySupLevel(String"/>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="[]">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=" inCollection,&#xA;            String linkedNodeName,&#xA;            String inFieldName,&#xA;            Map&lt;String, Object> conditions) {&#xA;&#xA;        qb.count()&#xA;                .from(entityClass.getCanonicalName(), Utils.getTableAlias(entityClass, 1))&#xA;                .innerJoin(linkedNodeName.substring(0, 2), linkedNodeName, inCollection, inFieldName);&#xA;&#xA;        // where&#xA;        if (conditions != null) {&#xA;            boolean first = true;&#xA;            for (Map.Entry&lt;String, Object> entry : conditions.entrySet()) {&#xA;                if (first) {&#xA;                    qb.and(qb.contain(entry.getKey(), entry.getValue().toString()));&#xA;                    first = false;&#xA;                } else {&#xA;                    qb.contain(entry.getKey(), entry.getValue().toString());&#xA;                }&#xA;            }&#xA;        }&#xA;&#xA;        return (Long) QueryExecutor.getSingleResult(qb, getEntityManager());&#xA;    }&#xA;}&#xA;"/>
+        <fileUrl xsi:type="ocl.ecore:OperationCallExp">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <source xsi:type="ocl.ecore:OperationCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <source xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="src/main/java/">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            </source>
+            <argument xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/String_Class/toLowerFirst">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              <source xsi:type="ocl.ecore:PropertyCallExp">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                <source xsi:type="ocl.ecore:VariableExp" name="aModel" referredVariable="/0/generateAbstractFacade/aModel">
+                  <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+                </source>
+                <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/4.0.0/UML#//NamedElement/name"/>
+              </source>
+            </argument>
+            <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/concat"/>
+          </source>
+          <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="/persistence/AbstractFacade.java">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          </argument>
+          <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String_Class/concat"/>
+        </fileUrl>
+        <charset xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="UTF-8">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </charset>
+      </body>
+      <documentation xsi:type="mtl:ModuleElementDocumentation">
+        <body startPosition="264" endPosition="335" value="&#xA;This template generates the facade for a class.&#xA;@param aModel&#xA;&#xA;"/>
+        <parametersDocumentation name="aModel">
+          <body value=""/>
+        </parametersDocumentation>
+      </documentation>
+      <parameter name="aModel">
+        <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+      </parameter>
+    </ownedModuleElement>
+  </mtl:Module>
+  <ecore:EPackage name="additions">
+    <eClassifiers xsi:type="ecore:EClass" name="String_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+      </eAnnotations>
+      <eOperations name="toLowerFirst">
+        <eAnnotations source="MTL"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Integer_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Real_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Real"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="EObject_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+      </eAnnotations>
+      <eOperations name="generateAbstractFacade">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/generateAbstractFacade"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="aModel">
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+        </eParameters>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="OclAny_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Collection(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Collection(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Sequence(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Sequence(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="OrderedSet(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OrderedSet(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Model_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Class_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Stereotype_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/uml2/4.0.0/UML#//Stereotype"/>
+      </eAnnotations>
+    </eClassifiers>
+  </ecore:EPackage>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ecore:EAnnotation source="positions">
+    <eAnnotations source="positions.0" references="/0/generateAbstractFacade">
+      <details key="start" value="338"/>
+      <details key="end" value="9392"/>
+      <details key="line" value="10"/>
+    </eAnnotations>
+    <eAnnotations source="positions.1" references="/0/generateAbstractFacade/%">
+      <details key="start" value="395"/>
+      <details key="end" value="9380"/>
+      <details key="line" value="11"/>
+    </eAnnotations>
+    <eAnnotations source="positions.2" references="/0/generateAbstractFacade/%/%">
+      <details key="start" value="515"/>
+      <details key="end" value="523"/>
+      <details key="line" value="12"/>
+    </eAnnotations>
+    <eAnnotations source="positions.3" references="/0/generateAbstractFacade/%/%.1">
+      <details key="start" value="524"/>
+      <details key="end" value="550"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.4" references="/0/generateAbstractFacade/%/%.1/%">
+      <details key="start" value="524"/>
+      <details key="end" value="535"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.5" references="/0/generateAbstractFacade/%/%.1/%/aModel">
+      <details key="start" value="524"/>
+      <details key="end" value="530"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.6" references="/0/generateAbstractFacade/%/%.2">
+      <details key="start" value="552"/>
+      <details key="end" value="1065"/>
+      <details key="line" value="12"/>
+    </eAnnotations>
+    <eAnnotations source="positions.7" references="/0/generateAbstractFacade/%/%.3">
+      <details key="start" value="1066"/>
+      <details key="end" value="1092"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.8" references="/0/generateAbstractFacade/%/%.3/%">
+      <details key="start" value="1066"/>
+      <details key="end" value="1077"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.9" references="/0/generateAbstractFacade/%/%.3/%/aModel">
+      <details key="start" value="1066"/>
+      <details key="end" value="1072"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.10" references="/0/generateAbstractFacade/%/%.4">
+      <details key="start" value="1094"/>
+      <details key="end" value="1118"/>
+      <details key="line" value="30"/>
+    </eAnnotations>
+    <eAnnotations source="positions.11" references="/0/generateAbstractFacade/%/%.5">
+      <details key="start" value="1119"/>
+      <details key="end" value="1145"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.12" references="/0/generateAbstractFacade/%/%.5/%">
+      <details key="start" value="1119"/>
+      <details key="end" value="1130"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.13" references="/0/generateAbstractFacade/%/%.5/%/aModel">
+      <details key="start" value="1119"/>
+      <details key="end" value="1125"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.14" references="/0/generateAbstractFacade/%/%.6">
+      <details key="start" value="1147"/>
+      <details key="end" value="1179"/>
+      <details key="line" value="31"/>
+    </eAnnotations>
+    <eAnnotations source="positions.15" references="/0/generateAbstractFacade/%/%.7">
+      <details key="start" value="1180"/>
+      <details key="end" value="1206"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.16" references="/0/generateAbstractFacade/%/%.7/%">
+      <details key="start" value="1180"/>
+      <details key="end" value="1191"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.17" references="/0/generateAbstractFacade/%/%.7/%/aModel">
+      <details key="start" value="1180"/>
+      <details key="end" value="1186"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.18" references="/0/generateAbstractFacade/%/%.8">
+      <details key="start" value="1208"/>
+      <details key="end" value="1263"/>
+      <details key="line" value="32"/>
+    </eAnnotations>
+    <eAnnotations source="positions.19" references="/0/generateAbstractFacade/%/%.9">
+      <details key="start" value="1264"/>
+      <details key="end" value="1290"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.20" references="/0/generateAbstractFacade/%/%.9/%">
+      <details key="start" value="1264"/>
+      <details key="end" value="1275"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.21" references="/0/generateAbstractFacade/%/%.9/%/aModel">
+      <details key="start" value="1264"/>
+      <details key="end" value="1270"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.22" references="/0/generateAbstractFacade/%/%.10">
+      <details key="start" value="1292"/>
+      <details key="end" value="2534"/>
+      <details key="line" value="33"/>
+    </eAnnotations>
+    <eAnnotations source="positions.23" references="/0/generateAbstractFacade/%/%.11">
+      <details key="start" value="2535"/>
+      <details key="end" value="2539"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.24" references="/0/generateAbstractFacade/%/%.12">
+      <details key="start" value="2541"/>
+      <details key="end" value="2802"/>
+      <details key="line" value="78"/>
+    </eAnnotations>
+    <eAnnotations source="positions.25" references="/0/generateAbstractFacade/%/%.13">
+      <details key="start" value="2803"/>
+      <details key="end" value="2808"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.26" references="/0/generateAbstractFacade/%/%.14">
+      <details key="start" value="2810"/>
+      <details key="end" value="2818"/>
+      <details key="line" value="82"/>
+    </eAnnotations>
+    <eAnnotations source="positions.27" references="/0/generateAbstractFacade/%/%.15">
+      <details key="start" value="2819"/>
+      <details key="end" value="2824"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.28" references="/0/generateAbstractFacade/%/%.16">
+      <details key="start" value="2826"/>
+      <details key="end" value="2859"/>
+      <details key="line" value="82"/>
+    </eAnnotations>
+    <eAnnotations source="positions.29" references="/0/generateAbstractFacade/%/%.17">
+      <details key="start" value="2860"/>
+      <details key="end" value="2865"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.30" references="/0/generateAbstractFacade/%/%.18">
+      <details key="start" value="2867"/>
+      <details key="end" value="5873"/>
+      <details key="line" value="83"/>
+    </eAnnotations>
+    <eAnnotations source="positions.31" references="/0/generateAbstractFacade/%/%.19">
+      <details key="start" value="5874"/>
+      <details key="end" value="5878"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.32" references="/0/generateAbstractFacade/%/%.20">
+      <details key="start" value="5880"/>
+      <details key="end" value="6144"/>
+      <details key="line" value="156"/>
+    </eAnnotations>
+    <eAnnotations source="positions.33" references="/0/generateAbstractFacade/%/%.21">
+      <details key="start" value="6145"/>
+      <details key="end" value="6150"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.34" references="/0/generateAbstractFacade/%/%.22">
+      <details key="start" value="6152"/>
+      <details key="end" value="6159"/>
+      <details key="line" value="163"/>
+    </eAnnotations>
+    <eAnnotations source="positions.35" references="/0/generateAbstractFacade/%/%.23">
+      <details key="start" value="6160"/>
+      <details key="end" value="6165"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.36" references="/0/generateAbstractFacade/%/%.24">
+      <details key="start" value="6167"/>
+      <details key="end" value="6175"/>
+      <details key="line" value="163"/>
+    </eAnnotations>
+    <eAnnotations source="positions.37" references="/0/generateAbstractFacade/%/%.25">
+      <details key="start" value="6176"/>
+      <details key="end" value="6181"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.38" references="/0/generateAbstractFacade/%/%.26">
+      <details key="start" value="6183"/>
+      <details key="end" value="7083"/>
+      <details key="line" value="163"/>
+    </eAnnotations>
+    <eAnnotations source="positions.39" references="/0/generateAbstractFacade/%/%.27">
+      <details key="start" value="7084"/>
+      <details key="end" value="7088"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.40" references="/0/generateAbstractFacade/%/%.28">
+      <details key="start" value="7090"/>
+      <details key="end" value="7116"/>
+      <details key="line" value="191"/>
+    </eAnnotations>
+    <eAnnotations source="positions.41" references="/0/generateAbstractFacade/%/%.29">
+      <details key="start" value="7117"/>
+      <details key="end" value="7121"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.42" references="/0/generateAbstractFacade/%/%.30">
+      <details key="start" value="7123"/>
+      <details key="end" value="7461"/>
+      <details key="line" value="192"/>
+    </eAnnotations>
+    <eAnnotations source="positions.43" references="/0/generateAbstractFacade/%/%.31">
+      <details key="start" value="7462"/>
+      <details key="end" value="7467"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.44" references="/0/generateAbstractFacade/%/%.32">
+      <details key="start" value="7469"/>
+      <details key="end" value="7476"/>
+      <details key="line" value="201"/>
+    </eAnnotations>
+    <eAnnotations source="positions.45" references="/0/generateAbstractFacade/%/%.33">
+      <details key="start" value="7477"/>
+      <details key="end" value="7482"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.46" references="/0/generateAbstractFacade/%/%.34">
+      <details key="start" value="7484"/>
+      <details key="end" value="7492"/>
+      <details key="line" value="201"/>
+    </eAnnotations>
+    <eAnnotations source="positions.47" references="/0/generateAbstractFacade/%/%.35">
+      <details key="start" value="7493"/>
+      <details key="end" value="7498"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.48" references="/0/generateAbstractFacade/%/%.36">
+      <details key="start" value="7500"/>
+      <details key="end" value="8483"/>
+      <details key="line" value="201"/>
+    </eAnnotations>
+    <eAnnotations source="positions.49" references="/0/generateAbstractFacade/%/%.37">
+      <details key="start" value="8484"/>
+      <details key="end" value="8488"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.50" references="/0/generateAbstractFacade/%/%.38">
+      <details key="start" value="8490"/>
+      <details key="end" value="9373"/>
+      <details key="line" value="229"/>
+    </eAnnotations>
+    <eAnnotations source="positions.51" references="/0/generateAbstractFacade/%/%.39">
+      <details key="start" value="402"/>
+      <details key="end" value="496"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.52" references="/0/generateAbstractFacade/%/%.39/%">
+      <details key="start" value="402"/>
+      <details key="end" value="453"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.53" references="/0/generateAbstractFacade/%/%.39/%/%">
+      <details key="start" value="402"/>
+      <details key="end" value="418"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.54" references="/0/generateAbstractFacade/%/%.39/%/%.1">
+      <details key="start" value="426"/>
+      <details key="end" value="452"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.55" references="/0/generateAbstractFacade/%/%.39/%/%.1/%">
+      <details key="start" value="426"/>
+      <details key="end" value="437"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.56" references="/0/generateAbstractFacade/%/%.39/%/%.1/%/aModel">
+      <details key="start" value="426"/>
+      <details key="end" value="432"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.57" references="/0/generateAbstractFacade/%/%.39/%.1">
+      <details key="start" value="461"/>
+      <details key="end" value="495"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.58" references="/0/generateAbstractFacade/%/%.40">
+      <details key="start" value="505"/>
+      <details key="end" value="512"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.59" references="/0/generateAbstractFacade/%.1">
+      <details key="start" value="261"/>
+      <details key="end" value="337"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.60" references="/0/generateAbstractFacade/%.1/aModel">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.61" references="/0/generateAbstractFacade/aModel">
+      <details key="start" value="378"/>
+      <details key="end" value="392"/>
+      <details key="line" value="10"/>
+    </eAnnotations>
+  </ecore:EAnnotation>
+</xmi:XMI>

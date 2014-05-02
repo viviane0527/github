@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditEmployeeTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditEmployeeLabel_account}" for="account" />
+                    <h:selectOneMenu id="account" value="#{employeeController.selected.account}" title="#{bundle.EditEmployeeTitle_account}" >
+                        <f:selectItems value="#{accountController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.EditEmployeeLabel_createAt}" for="createAt" />
+                    <h:inputText id="createAt" value="#{employeeController.selected.createAt}" title="#{bundle.EditEmployeeTitle_createAt}" >
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.EditEmployeeLabel_diplome}" for="diplome" />
+                    <h:inputText id="diplome" value="#{employeeController.selected.diplome}" title="#{bundle.EditEmployeeTitle_diplome}" />
+                    <h:outputLabel value="#{bundle.EditEmployeeLabel_language}" for="language" />
+                    <h:inputText id="language" value="#{employeeController.selected.language}" title="#{bundle.EditEmployeeTitle_language}" />
+                    <h:outputLabel value="#{bundle.EditEmployeeLabel_manager}" for="manager" />
+                    <h:selectOneMenu id="manager" value="#{employeeController.selected.manager}" title="#{bundle.EditEmployeeTitle_manager}" >
+                        <f:selectItems value="#{managerController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.EditEmployeeLabel_picture}" for="picture" />
+                    <h:inputTextarea rows="4" cols="30" id="picture" value="#{employeeController.selected.picture}" title="#{bundle.EditEmployeeTitle_picture}" />
+                    <h:outputLabel value="#{bundle.EditEmployeeLabel_project}" for="project" />
+                    <h:selectOneMenu id="project" value="#{employeeController.selected.project}" title="#{bundle.EditEmployeeTitle_project}" >
+                        <f:selectItems value="#{projectController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.EditEmployeeLabel_salary}" for="salary" />
+                    <h:inputText id="salary" value="#{employeeController.selected.salary}" title="#{bundle.EditEmployeeTitle_salary}" />
+                    <h:outputLabel value="#{bundle.EditEmployeeLabel_type}" for="type" />
+                    <h:selectOneMenu id="type" value="#{employeeController.selected.type}" title="#{bundle.EditEmployeeTitle_type}" >
+                        <f:selectItems value="#{employeeTypesController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.EditEmployeeLabel_address}" for="address" />
+                    <h:selectOneMenu id="address" value="#{employeeController.selected.address}" title="#{bundle.EditEmployeeTitle_address}" >
+                        <f:selectItems value="#{addressController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.EditEmployeeLabel_birthDate}" for="birthDate" />
+                    <h:inputText id="birthDate" value="#{employeeController.selected.birthDate}" title="#{bundle.EditEmployeeTitle_birthDate}" >
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.EditEmployeeLabel_firstName}" for="firstName" />
+                    <h:inputText id="firstName" value="#{employeeController.selected.firstName}" title="#{bundle.EditEmployeeTitle_firstName}" required="true" requiredMessage="#{bundle.EditEmployeeRequiredMessage_firstName}"/>
+                    <h:outputLabel value="#{bundle.EditEmployeeLabel_lastName}" for="lastName" />
+                    <h:inputText id="lastName" value="#{employeeController.selected.lastName}" title="#{bundle.EditEmployeeTitle_lastName}" required="true" requiredMessage="#{bundle.EditEmployeeRequiredMessage_lastName}"/>
+                    <h:outputLabel value="#{bundle.EditEmployeeLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{employeeController.selected.id}" title="#{bundle.EditEmployeeTitle_id}" />
+                </h:panelGrid>
+                <h:commandLink action="#{employeeController.update}" value="#{bundle.EditEmployeeSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditEmployeeViewLink}"/>
+                <br />
+                <h:commandLink action="#{employeeController.prepareList}" value="#{bundle.EditEmployeeShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditEmployeeIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:comp="http://java.sun.com/jsf/composite/ezcomp"
+	  xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="body">
+                <p:panel id="mainPanel" styleClass="mainPanel" header="#{bundle.EditEnterpriseTitle}">
+                	<p:fieldset id="mainFieldset" legend="#{bundle.MainFieldsetTitle}"> 
+                	
+                	
+                	
+                	
+                	
+                	
+                	
+                	<comp:inputText 	nameValue="name" 
+                						inputValue="#{enterpriseController.selected.name}" 
+                						labelValue="#{bundle.Enterprise_name}"
+                						requiredValue="false"
+                						cssClass="formPanelGrid"
+                						tooltipLabel=""
+                						tooltipField="pattern=([A-Z]|[a-z]|[0-9])* - minLength=0 - maxLength=56"/>
+                	
+                	
+                	</p:fieldset>
+                	<p:fieldset id="headQuaterFieldset" legend="#{bundle.Enterprise_headQuater}"> 
+                	
+                	
+                	<comp:inputText 	nameValue="city" 
+                						inputValue="#{enterpriseController.selected.headQuater.city}" 
+                						labelValue="#{bundle.Address_city}"
+                						requiredValue="false"
+                						cssClass="formPanelGrid"
+                						tooltipLabel=""
+                						tooltipField="pattern=([A-Z]|[a-z]|[0-9])* - minLength=0 - maxLength=56"/>
+                	
+                	
+                	
+                	
+                	<comp:inputText 	nameValue="country" 
+                						inputValue="#{enterpriseController.selected.headQuater.country}" 
+                						labelValue="#{bundle.Address_country}"
+                						requiredValue="false"
+                						cssClass="formPanelGrid"
+                						tooltipLabel=""
+                						tooltipField="pattern=([A-Z]|[a-z]|[0-9])* - minLength=0 - maxLength=56"/>
+                	
+                	
+                	
+                	
+                	<comp:inputText 	nameValue="streetName" 
+                						inputValue="#{enterpriseController.selected.headQuater.streetName}" 
+                						labelValue="#{bundle.Address_streetName}"
+                						requiredValue="false"
+                						cssClass="formPanelGrid"
+                						tooltipLabel=""
+                						tooltipField="pattern=([A-Z]|[a-z]|[0-9])* - minLength=0 - maxLength=56"/>
+                	
+                	
+                	
+                	
+                	
+                	
+                	
+                	</p:fieldset>
+                	
+                	
+                 </p:panel>
+        </ui:define>
+        <ui:define name="buttons">
+			<h:panelGrid columns="3">
+                <p:commandButton 	ajax="false" icon="ui-icon-disk"
+									update="mainPanel" 
+									actionListener="#{enterpriseController.update}" 
+									value="#{bundle.SaveLink}" />
+				<p:commandButton 	ajax="false" icon="ui-icon-zoomin"
+									action="View" 
+									value="#{bundle.ViewLink}"/>
+                <p:commandButton 	ajax="false" icon="ui-icon-search"
+									action="#{enterpriseController.prepareList}" 
+									value="#{bundle.EnterpriseShowAllLink}" 
+									immediate="true"/>
+			</h:panelGrid>
+        </ui:define>
+        <ui:define name="dialogs">
+			
+			
+			
+			
+		</ui:define>
+    </ui:composition>
+</html>

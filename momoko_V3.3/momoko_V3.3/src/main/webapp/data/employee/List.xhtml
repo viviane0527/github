@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:comp="http://java.sun.com/jsf/composite/ezcomp"
+	  xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="body">
+            <h:form>
+			<p:messages id="messages" autoUpdate="true" closable="true" />  
+        	<p:dataTable 	rows="10" value="#{employeeController.lazyModel}" 
+        					var="item"
+							id="tblemployee"
+							lazy="true"
+							paginator="true" 
+							paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}">
+                   <f:facet name="header">  
+    					<h:outputText value="#{bundle.ListEmployeeTitle}"/>
+					</f:facet>  
+       	 			<p:column headerText="#{bundle.Employee_picture}" filterBy="#{item.picture}" filterMatchMode="contains"  sortBy="#{item.picture}">
+                        <h:outputText value="#{item.picture}"/>
+                    </p:column>
+       	 			<p:column headerText="#{bundle.Employee_salary}" filterBy="#{item.salary}" filterMatchMode="contains"  sortBy="#{item.salary}">
+                        <h:outputText value="#{item.salary}"/>
+                    </p:column>
+                    <p:column headerText="&nbsp;" exportable="false">
+						<p:commandButton style="visibility:hidden;width:0px;"/>
+						<p:commandButton ajax="false" action="#{employeeController.prepareView}" title="#{bundle.ViewLink}" icon="ui-icon-zoomin"/>
+                    	<p:commandButton ajax="false" action="#{employeeController.prepareEdit}" title="#{bundle.EditLink}" icon="ui-icon-pencil"/>
+                    	<p:commandButton ajax="false" action="#{employeeController.destroy}" title="#{bundle.DestroyLink}" icon="ui-icon-trash"/>
+	 				</p:column>
+            </p:dataTable>
+			<br/>
+			<p:commandButton style="visibility:hidden;width:0px;"/>
+			<p:commandButton 	ajax="false" icon="ui-icon-document"
+					action="#{employeeController.prepareCreate}" 
+					value="#{bundle.EmployeeCreateLink}"
+					immediate="true"/>
+                        </h:form>
+		 </ui:define>	
+    </ui:composition>
+</html>

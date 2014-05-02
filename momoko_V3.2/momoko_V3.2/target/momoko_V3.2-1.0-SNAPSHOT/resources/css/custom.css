@@ -1,0 +1,46 @@
+.formPanelGrid {
+	margin-left: 20%;
+    margin-right: 10%;
+    width: 75%;
+}
+
+.formPanelGrid td .ui-outputlabel  {
+    text-align: left;
+    float: left;
+    width: 250px;
+}
+
+.formPanelGrid td {
+	float: left;
+}
+
+#busyImage {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+
+.viewPanelGrid td{
+    width:250px;
+}
+
+.mainPanel{
+	background-color: inactiveborder;
+    height: 97%;
+    padding: 0px;
+}
+
+.ui-panel-content{
+    height: 89%;
+    overflow: auto;
+}
+
+.ui-panel .ui-panel-content {
+    padding: 0 0 0 0 !important;
+    margin-top: 10px;
+}
+
+.nestedUnit {
+    border:0px none !important;
+}
+

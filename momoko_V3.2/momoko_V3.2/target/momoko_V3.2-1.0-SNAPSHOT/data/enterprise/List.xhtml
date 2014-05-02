@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListEnterpriseTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:form styleClass="jsfcrud_list_form">
+                <h:panelGroup id="messagePanel" layout="block">
+                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                </h:panelGroup>
+                <h:outputText escape="false" value="#{bundle.ListEnterpriseEmpty}" rendered="#{enterpriseController.items.rowCount == 0}"/>
+                <h:panelGroup rendered="#{enterpriseController.items.rowCount > 0}">
+                    <h:outputText value="#{enterpriseController.pagination.pageFirstItem + 1}..#{enterpriseController.pagination.pageLastItem + 1}/#{enterpriseController.pagination.itemsCount}"/>&nbsp;
+                    <h:commandLink action="#{enterpriseController.previous}" value="#{bundle.Previous} #{enterpriseController.pagination.pageSize}" rendered="#{enterpriseController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink action="#{enterpriseController.next}" value="#{bundle.Next} #{enterpriseController.pagination.pageSize}" rendered="#{enterpriseController.pagination.hasNextPage}"/>&nbsp;
+                    <h:dataTable value="#{enterpriseController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEnterpriseTitle_headQuater}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.headQuater}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEnterpriseTitle_logo}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.logo}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEnterpriseTitle_name}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.name}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListEnterpriseTitle_id}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.id}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="&nbsp;"/>
+                            </f:facet>
+                            <h:commandLink action="#{enterpriseController.prepareView}" value="#{bundle.ListEnterpriseViewLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{enterpriseController.prepareEdit}" value="#{bundle.ListEnterpriseEditLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{enterpriseController.destroy}" value="#{bundle.ListEnterpriseDestroyLink}"/>
+                        </h:column>
+                    </h:dataTable>
+                </h:panelGroup>
+                <br />
+                <h:commandLink action="#{enterpriseController.prepareCreate}" value="#{bundle.ListEnterpriseCreateLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ListEnterpriseIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

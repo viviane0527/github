@@ -1,0 +1,786 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:mtl="http://www.eclipse.org/acceleo/mtl/3.0" xmlns:ocl.ecore="http://www.eclipse.org/ocl/1.1.0/Ecore">
+  <mtl:Module name="generateCompositeComponents" nsURI="com::thales::momoko2::pim::uml2::gen::files::webpages::generateCompositeComponents" startHeaderPosition="29" endHeaderPosition="190">
+    <input>
+      <takesTypesFrom href="http://www.eclipse.org/uml2/4.0.0/UML#/"/>
+    </input>
+    <ownedModuleElement xsi:type="mtl:Template" name="generateCompositeComponents" visibility="Public">
+      <body xsi:type="mtl:TemplateInvocation" definition="/0/generateBoolCheckbox">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <argument xsi:type="ocl.ecore:VariableExp" name="aModel" referredVariable="/0/generateCompositeComponents/aModel">
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+        </argument>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+      <body xsi:type="mtl:TemplateInvocation" definition="/0/generateDateCalendar">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <argument xsi:type="ocl.ecore:VariableExp" name="aModel" referredVariable="/0/generateCompositeComponents/aModel">
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+        </argument>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+      <body xsi:type="mtl:TemplateInvocation" definition="/0/generateInputText">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <argument xsi:type="ocl.ecore:VariableExp" name="aModel" referredVariable="/0/generateCompositeComponents/aModel">
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+        </argument>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+      <body xsi:type="mtl:TemplateInvocation" definition="/0/generateSelectOneMenu">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <argument xsi:type="ocl.ecore:VariableExp" name="aModel" referredVariable="/0/generateCompositeComponents/aModel">
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+        </argument>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+      <body xsi:type="mtl:TemplateInvocation" definition="/0/generateSpinner">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <argument xsi:type="ocl.ecore:VariableExp" name="aModel" referredVariable="/0/generateCompositeComponents/aModel">
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+        </argument>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+      <body xsi:type="mtl:TemplateInvocation" definition="/0/generateTimeCalendar">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <argument xsi:type="ocl.ecore:VariableExp" name="aModel" referredVariable="/0/generateCompositeComponents/aModel">
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+        </argument>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+      <body xsi:type="mtl:TemplateInvocation" definition="/0/generatePassword">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <argument xsi:type="ocl.ecore:VariableExp" name="aModel" referredVariable="/0/generateCompositeComponents/aModel">
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+        </argument>
+      </body>
+      <documentation xsi:type="mtl:ModuleElementDocumentation">
+        <body startPosition="111" endPosition="190" value="&#xA;This template generates the composites components files&#xA;@param aModel&#xA;&#xA;"/>
+        <parametersDocumentation name="aModel">
+          <body value=""/>
+        </parametersDocumentation>
+      </documentation>
+      <parameter name="aModel">
+        <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+      </parameter>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Template" name="generatePassword">
+      <body xsi:type="mtl:FileBlock" openMode="OverWrite">
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;!DOCTYPE html>&#xA;&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&#xA;      xmlns:cc=&quot;http://java.sun.com/jsf/composite&quot;&#xA;      xmlns:h=&quot;http://java.sun.com/jsf/html&quot;&#xA;      xmlns:p=&quot;http://primefaces.org/ui&quot;>&#xA;    &lt;cc:interface >&#xA;       &lt;cc:attribute name=&quot;nameValue&quot; required=&quot;true&quot;/>&#xA;        &lt;cc:attribute name=&quot;inputValue&quot; required=&quot;true&quot;/>&#xA;        &lt;cc:attribute name=&quot;labelValue&quot; required=&quot;true&quot;/>&#xA;        &lt;cc:attribute name=&quot;requiredValue&quot; default=&quot;true&quot;/>&#xA;        &lt;cc:attribute name=&quot;tooltipLabel&quot; />&#xA;        &lt;cc:attribute name=&quot;tooltipField&quot; />&#xA;        &lt;cc:attribute name=&quot;cssClass&quot; default=&quot;formPanelGrid&quot;/>          &#xA;    &lt;/cc:interface>&#xA;&#xA;    &lt;cc:implementation>&#xA;      &lt;h:panelGrid columns=&quot;3&quot; styleClass=&quot;#{cc.attrs.cssClass}&quot;>&#xA;            &lt;p:outputLabel id=&quot;#{cc.attrs.nameValue}Label&quot; for=&quot;#{cc.attrs.nameValue}&quot; value=&quot;#{cc.attrs.labelValue}&quot; />  &#xA;            &lt;p:password id=&quot;#{cc.attrs.nameValue}&quot; &#xA;                        value=&quot;#{cc.attrs.inputValue}&quot; &#xA;                        required=&quot;#{cc.attrs.requiredValue}&quot; &#xA;                       &#xA;                       />  &#xA;            &lt;p:message for=&quot;#{cc.attrs.nameValue}&quot;/> &#xA;&#x9;&#x9;&#x9;&lt;p:tooltip  value=&quot;#{cc.attrs.tooltipLabel}&quot; &#xA;                        rendered=&quot;#{cc.attrs.tooltipLabel!=''}&quot;&#xA;                        for=&quot;#{cc.attrs.nameValue}Label&quot;/>&#xA;                         &lt;p:tooltip  value=&quot;#{cc.attrs.tooltipField}&quot; &#xA;                        for=&quot;#{cc.attrs.nameValue}&quot; &#xA;                        rendered=&quot;#{cc.attrs.tooltipField!=''}&quot;&#xA;                        showEvent=&quot;focus&quot; &#xA;                        hideEvent=&quot;blur&quot; />  &#xA;        &lt;/h:panelGrid>&#xA;    &lt;/cc:implementation>&#xA;&#xA;&lt;/html>&#xA;"/>
+        <fileUrl xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="src/main/webapp/resources/ezcomp/password.xhtml">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </fileUrl>
+        <charset xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="UTF-8">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </charset>
+      </body>
+      <parameter name="aModel">
+        <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+      </parameter>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Template" name="generateBoolCheckbox">
+      <body xsi:type="mtl:FileBlock" openMode="OverWrite">
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&lt;?xml version='1.0' encoding='UTF-8' ?>&#xA;&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;>&#xA;&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&#xA;      xmlns:cc=&quot;http://java.sun.com/jsf/composite&quot;&#xA;      xmlns:p=&quot;http://primefaces.org/ui&quot;&#xA;      xmlns:h=&quot;http://java.sun.com/jsf/html&quot;>&#xA;&#xA;    &lt;!-- INTERFACE -->&#xA;    &lt;cc:interface>&#xA;        &lt;cc:attribute name=&quot;nameValue&quot; required=&quot;true&quot;/>&#xA;        &lt;cc:attribute name=&quot;inputValue&quot; required=&quot;true&quot;/>&#xA;        &lt;cc:attribute name=&quot;labelValue&quot; required=&quot;true&quot;/>&#xA;        &lt;cc:attribute name=&quot;tooltipLabel&quot; default=&quot;tooltipLabel&quot;/>&#xA;        &lt;cc:attribute name=&quot;requiredValue&quot; default=&quot;false&quot;/> &#xA;        &lt;cc:attribute name=&quot;cssClass&quot; default=&quot;formPanelGrid&quot;/>&#xA;        &lt;cc:attribute name=&quot;tooltipLabel&quot; />&#xA;    &lt;/cc:interface>&#xA;&#xA;    &lt;!-- IMPLEMENTATION -->&#xA;    &lt;cc:implementation>&#xA;        &lt;h:panelGrid columns=&quot;3&quot; styleClass=&quot;#{cc.attrs.cssClass}&quot;>&#xA;            &lt;p:outputLabel id=&quot;#{cc.attrs.nameValue}Label&quot; for=&quot;#{cc.attrs.nameValue}&quot; value=&quot;#{cc.attrs.labelValue}&quot; />  &#xA;            &lt;p:selectBooleanCheckbox id=&quot;#{cc.attrs.nameValue}&quot; value=&quot;#{cc.attrs.inputValue}&quot; required=&quot;#{cc.attrs.requiredValue}&quot;/>&#xA;            &lt;p:message for=&quot;#{cc.attrs.nameValue}&quot;/>&#xA;&#x9;&#x9;&#x9;&lt;p:tooltip  value=&quot;#{cc.attrs.tooltipLabel}&quot; &#xA;                        rendered=&quot;#{cc.attrs.tooltipLabel!=''}&quot;&#xA;                        for=&quot;#{cc.attrs.nameValue}Label&quot;/>  &#xA;        &lt;/h:panelGrid>&#xA;    &lt;/cc:implementation>&#xA;&lt;/html>&#xA;"/>
+        <fileUrl xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="src/main/webapp/resources/ezcomp/boolCheckbox.xhtml">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </fileUrl>
+        <charset xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="UTF-8">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </charset>
+      </body>
+      <parameter name="aModel">
+        <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+      </parameter>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Template" name="generateDateCalendar">
+      <body xsi:type="mtl:FileBlock" openMode="OverWrite">
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&lt;?xml version='1.0' encoding='UTF-8' ?>&#xA;&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;>&#xA;&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&#xA;      xmlns:cc=&quot;http://java.sun.com/jsf/composite&quot;&#xA;      xmlns:p=&quot;http://primefaces.org/ui&quot;&#xA;      xmlns:f=&quot;http://java.sun.com/jsf/core&quot;&#xA;      xmlns:h=&quot;http://java.sun.com/jsf/html&quot;>&#xA;&#xA;    &lt;!-- INTERFACE -->&#xA;    &lt;cc:interface>&#xA;        &lt;cc:attribute name=&quot;nameValue&quot; required=&quot;true&quot;/>&#xA;        &lt;cc:attribute name=&quot;inputValue&quot; required=&quot;true&quot;/>&#xA;        &lt;cc:attribute name=&quot;labelValue&quot; required=&quot;true&quot;/>&#xA;        &lt;cc:attribute name=&quot;requiredValue&quot; default=&quot;false&quot;/> &#xA;        &lt;cc:attribute name=&quot;cssClass&quot; default=&quot;formPanelGrid&quot;/>&#xA;        &lt;cc:attribute name=&quot;tooltipLabel&quot; />&#xA;    &lt;/cc:interface>&#xA;&#xA;    &lt;!-- IMPLEMENTATION -->&#xA;    &lt;cc:implementation>&#xA;        &lt;h:panelGrid columns=&quot;3&quot; styleClass=&quot;#{cc.attrs.cssClass}&quot;>&#xA;            &lt;p:outputLabel id=&quot;#{cc.attrs.nameValue}Label&quot; for=&quot;#{cc.attrs.nameValue}&quot; value=&quot;#{cc.attrs.labelValue}&quot; />  &#xA;            &lt;p:calendar id=&quot;#{cc.attrs.nameValue}&quot; value=&quot;#{cc.attrs.inputValue}&quot; required=&quot;#{cc.attrs.requiredValue}&quot;/>&#xA;            &lt;p:message for=&quot;#{cc.attrs.nameValue}&quot;/> &#xA;&#x9;&#x9;&#x9;&lt;p:tooltip  value=&quot;#{cc.attrs.tooltipLabel}&quot; &#xA;                        rendered=&quot;#{cc.attrs.tooltipLabel!=''}&quot;&#xA;                        for=&quot;#{cc.attrs.nameValue}Label&quot;/>&#xA;        &lt;/h:panelGrid>&#xA;    &lt;/cc:implementation>&#xA;&lt;/html>&#xA;"/>
+        <fileUrl xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="src/main/webapp/resources/ezcomp/dateCalendar.xhtml">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </fileUrl>
+        <charset xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="UTF-8">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </charset>
+      </body>
+      <parameter name="aModel">
+        <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+      </parameter>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Template" name="generateInputText">
+      <body xsi:type="mtl:FileBlock" openMode="OverWrite">
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&lt;?xml version='1.0' encoding='UTF-8' ?>&#xA;&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;>&#xA;&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&#xA;      xmlns:cc=&quot;http://java.sun.com/jsf/composite&quot;&#xA;      xmlns:p=&quot;http://primefaces.org/ui&quot; &#xA;      xmlns:h=&quot;http://java.sun.com/jsf/html&quot;>&#xA;&#xA;    &lt;!-- INTERFACE -->&#xA;    &lt;cc:interface>&#xA;        &lt;cc:attribute name=&quot;nameValue&quot; required=&quot;true&quot;/>&#xA;        &lt;cc:attribute name=&quot;inputValue&quot; required=&quot;true&quot;/>&#xA;        &lt;cc:attribute name=&quot;labelValue&quot; required=&quot;true&quot;/>&#xA;        &lt;cc:attribute name=&quot;requiredValue&quot; default=&quot;false&quot;/>&#xA;        &lt;cc:attribute name=&quot;tooltipLabel&quot; />&#xA;        &lt;cc:attribute name=&quot;tooltipField&quot; />&#xA;        &lt;cc:attribute name=&quot;cssClass&quot; default=&quot;formPanelGrid&quot;/>          &#xA;    &lt;/cc:interface>&#xA;&#xA;    &lt;!-- IMPLEMENTATION -->&#xA;    &lt;cc:implementation>&#xA;        &lt;h:panelGrid columns=&quot;3&quot; styleClass=&quot;#{cc.attrs.cssClass}&quot;>&#xA;            &lt;p:outputLabel id=&quot;#{cc.attrs.nameValue}Label&quot; &#xA;                           for=&quot;#{cc.attrs.nameValue}&quot; &#xA;                           value=&quot;#{cc.attrs.labelValue}&quot; />&#xA;            &lt;p:inputText id=&quot;#{cc.attrs.nameValue}&quot;&#xA;                         value=&quot;#{cc.attrs.inputValue}&quot; &#xA;                         &#xA;                         required=&quot;#{cc.attrs.requiredValue}&quot;/>&#xA;            &lt;p:message for=&quot;#{cc.attrs.nameValue}&quot;/> &#xA;            &lt;p:tooltip  value=&quot;#{cc.attrs.tooltipLabel}&quot; &#xA;                        rendered=&quot;#{cc.attrs.tooltipLabel!=''}&quot;&#xA;                        for=&quot;#{cc.attrs.nameValue}Label&quot;/>  &#xA;            &lt;p:tooltip  value=&quot;#{cc.attrs.tooltipField}&quot; &#xA;                        for=&quot;#{cc.attrs.nameValue}&quot; &#xA;                        rendered=&quot;#{cc.attrs.tooltipField!=''}&quot;&#xA;                        showEvent=&quot;focus&quot; &#xA;                        hideEvent=&quot;blur&quot; />  &#xA;        &lt;/h:panelGrid>&#xA;    &lt;/cc:implementation>&#xA;&lt;/html>&#xA;"/>
+        <fileUrl xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="src/main/webapp/resources/ezcomp/inputText.xhtml">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </fileUrl>
+        <charset xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="UTF-8">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </charset>
+      </body>
+      <parameter name="aModel">
+        <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+      </parameter>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Template" name="generateSelectOneMenu">
+      <body xsi:type="mtl:FileBlock" openMode="OverWrite">
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&lt;?xml version='1.0' encoding='UTF-8' ?>&#xA;&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;>&#xA;&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&#xA;      xmlns:cc=&quot;http://java.sun.com/jsf/composite&quot;&#xA;      xmlns:p=&quot;http://primefaces.org/ui&quot;&#xA;      xmlns:f=&quot;http://java.sun.com/jsf/core&quot;&#xA;      xmlns:h=&quot;http://java.sun.com/jsf/html&quot;>&#xA;&#xA;    &lt;!-- INTERFACE -->&#xA;    &lt;cc:interface>&#xA;        &lt;cc:attribute name=&quot;nameValue&quot; required=&quot;true&quot;/>&#xA;        &lt;cc:attribute name=&quot;inputValue&quot; required=&quot;true&quot;/>&#xA;        &lt;cc:attribute name=&quot;labelValue&quot; required=&quot;true&quot;/>&#xA;        &lt;cc:attribute name=&quot;requiredValue&quot; default=&quot;false&quot;/>  &#xA;        &lt;cc:attribute name=&quot;itemValues&quot; required=&quot;true&quot;/> &#xA;        &lt;cc:attribute name=&quot;cssClass&quot; default=&quot;formPanelGrid&quot;/> &#xA;        &lt;cc:attribute name=&quot;tooltipLabel&quot; />&#xA;    &lt;/cc:interface>&#xA;&#xA;    &lt;!-- IMPLEMENTATION -->&#xA;    &lt;cc:implementation>&#xA;        &lt;h:panelGrid columns=&quot;3&quot; styleClass=&quot;#{cc.attrs.cssClass}&quot;>&#xA;            &lt;p:outputLabel id=&quot;#{cc.attrs.nameValue}Label&quot; for=&quot;#{cc.attrs.nameValue}&quot; value=&quot;#{cc.attrs.labelValue}&quot; />  &#xA;            &lt;p:selectOneMenu id=&quot;#{cc.attrs.nameValue}&quot; &#xA;                             value=&quot;#{cc.attrs.inputValue}&quot; &#xA;                             required=&quot;#{cc.attrs.requiredValue}&quot; >&#xA;                &lt;f:selectItem itemLabel=&quot;Select One&quot; itemValue=&quot;&quot; />  &#xA;                &lt;f:selectItems value=&quot;#{cc.attrs.itemValues}&quot; /> &#xA;            &lt;/p:selectOneMenu>&#xA;            &lt;p:message for=&quot;#{cc.attrs.nameValue}&quot;/>  &#xA;&#x9;&#x9;&#x9;&lt;p:tooltip  value=&quot;#{cc.attrs.tooltipLabel}&quot; &#xA;                        rendered=&quot;#{cc.attrs.tooltipLabel!=''}&quot;&#xA;                        for=&quot;#{cc.attrs.nameValue}Label&quot;/>  &#xA;        &lt;/h:panelGrid>&#xA;    &lt;/cc:implementation>&#xA;&lt;/html>&#xA;"/>
+        <fileUrl xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="src/main/webapp/resources/ezcomp/selectOneMenu.xhtml">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </fileUrl>
+        <charset xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="UTF-8">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </charset>
+      </body>
+      <parameter name="aModel">
+        <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+      </parameter>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Template" name="generateSpinner">
+      <body xsi:type="mtl:FileBlock" openMode="OverWrite">
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&lt;?xml version='1.0' encoding='UTF-8' ?>&#xA;&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;>&#xA;&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&#xA;      xmlns:cc=&quot;http://java.sun.com/jsf/composite&quot;&#xA;      xmlns:p=&quot;http://primefaces.org/ui&quot;&#xA;      xmlns:h=&quot;http://java.sun.com/jsf/html&quot;>&#xA;&#xA;    &lt;!-- INTERFACE -->&#xA;    &lt;cc:interface>&#xA;        &lt;cc:attribute name=&quot;nameValue&quot; required=&quot;true&quot;/>&#xA;        &lt;cc:attribute name=&quot;inputValue&quot; required=&quot;true&quot;/>&#xA;        &lt;cc:attribute name=&quot;labelValue&quot; required=&quot;true&quot;/>&#xA;        &lt;cc:attribute name=&quot;requiredValue&quot; default=&quot;false&quot;/>&#xA;        &lt;cc:attribute name=&quot;cssClass&quot; default=&quot;formPanelGrid&quot;/>   &#xA;        &lt;cc:attribute name=&quot;tooltipLabel&quot; />&#xA;        &lt;cc:attribute name=&quot;tooltipField&quot; />     &#xA;    &lt;/cc:interface>&#xA;&#xA;    &lt;!-- IMPLEMENTATION -->&#xA;    &lt;cc:implementation>&#xA;        &lt;h:panelGrid columns=&quot;3&quot; styleClass=&quot;#{cc.attrs.cssClass}&quot;>&#xA;            &lt;p:outputLabel id=&quot;#{cc.attrs.nameValue}Label&quot; for=&quot;#{cc.attrs.nameValue}&quot; value=&quot;#{cc.attrs.labelValue}&quot; />  &#xA;            &lt;p:spinner id=&quot;#{cc.attrs.nameValue}&quot; &#xA;                       value=&quot;#{cc.attrs.inputValue}&quot; &#xA;                       required=&quot;#{cc.attrs.requiredValue}&quot;/>&#xA;&#x9;&#x9;&#x9;&lt;p:tooltip  value=&quot;#{cc.attrs.tooltipLabel}&quot; &#xA;                        rendered=&quot;#{cc.attrs.tooltipLabel!=''}&quot;&#xA;                        for=&quot;#{cc.attrs.nameValue}Label&quot;/>  &#xA;            &lt;p:tooltip  value=&quot;#{cc.attrs.tooltipField}&quot; &#xA;                        for=&quot;#{cc.attrs.nameValue}&quot; &#xA;                        rendered=&quot;#{cc.attrs.tooltipField!=''}&quot;&#xA;                        showEvent=&quot;focus&quot; &#xA;                        hideEvent=&quot;blur&quot; />&#xA;        &lt;/h:panelGrid>&#xA;        &lt;p:message for=&quot;#{cc.attrs.nameValue}&quot;/>  &#xA;    &lt;/cc:implementation>&#xA;&lt;/html>&#xA;"/>
+        <fileUrl xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="src/main/webapp/resources/ezcomp/spinner.xhtml">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </fileUrl>
+        <charset xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="UTF-8">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </charset>
+      </body>
+      <parameter name="aModel">
+        <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+      </parameter>
+    </ownedModuleElement>
+    <ownedModuleElement xsi:type="mtl:Template" name="generateTimeCalendar">
+      <body xsi:type="mtl:FileBlock" openMode="OverWrite">
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&lt;?xml version='1.0' encoding='UTF-8' ?>&#xA;&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;>&#xA;&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&#xA;      xmlns:cc=&quot;http://java.sun.com/jsf/composite&quot;&#xA;      xmlns:p=&quot;http://primefaces.org/ui&quot;&#xA;      xmlns:h=&quot;http://java.sun.com/jsf/html&quot;>&#xA;&#xA;    &lt;!-- INTERFACE -->&#xA;    &lt;cc:interface>&#xA;        &lt;cc:attribute name=&quot;nameValue&quot; required=&quot;true&quot;/>&#xA;        &lt;cc:attribute name=&quot;inputValue&quot; required=&quot;true&quot;/>&#xA;        &lt;cc:attribute name=&quot;labelValue&quot; required=&quot;true&quot;/>&#xA;        &lt;cc:attribute name=&quot;requiredValue&quot; default=&quot;false&quot;/>&#xA;        &lt;cc:attribute name=&quot;cssClass&quot; default=&quot;formPanelGrid&quot;/>  &#xA;        &lt;cc:attribute name=&quot;tooltipLabel&quot; />&#xA;    &lt;/cc:interface>&#xA;&#xA;    &lt;!-- IMPLEMENTATION -->&#xA;    &lt;cc:implementation>&#xA;        &lt;h:panelGrid columns=&quot;3&quot; styleClass=&quot;#{cc.attrs.cssClass}&quot;>&#xA;            &lt;p:outputLabel id=&quot;#{cc.attrs.nameValue}Label&quot; for=&quot;#{cc.attrs.nameValue}&quot; value=&quot;#{cc.attrs.labelValue}&quot; />  &#xA;            &lt;p:calendar id=&quot;#{cc.attrs.nameValue}&quot; &#xA;                        value=&quot;#{cc.attrs.inputValue}&quot; &#xA;                        required=&quot;#{cc.attrs.requiredValue}&quot; &#xA;                        pattern=&quot;HH:mm&quot; &#xA;                        timeOnly=&quot;true&quot;/>  &#xA;            &lt;p:message for=&quot;#{cc.attrs.nameValue}&quot;/> &#xA;&#x9;&#x9;&#x9;&lt;p:tooltip  value=&quot;#{cc.attrs.tooltipLabel}&quot; &#xA;                        rendered=&quot;#{cc.attrs.tooltipLabel!=''}&quot;&#xA;                        for=&quot;#{cc.attrs.nameValue}Label&quot;/>  &#xA;        &lt;/h:panelGrid>&#xA;    &lt;/cc:implementation>&#xA;&lt;/html>&#xA;"/>
+        <fileUrl xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="src/main/webapp/resources/ezcomp/timeCalendar.xhtml">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </fileUrl>
+        <charset xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="UTF-8">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </charset>
+      </body>
+      <parameter name="aModel">
+        <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+      </parameter>
+    </ownedModuleElement>
+  </mtl:Module>
+  <ecore:EPackage name="additions">
+    <eClassifiers xsi:type="ecore:EClass" name="String_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Integer_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Real_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Real"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="EObject_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+      </eAnnotations>
+      <eOperations name="generateCompositeComponents">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/generateCompositeComponents"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="aModel">
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="generatePassword">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/generatePassword"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="aModel">
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="generateBoolCheckbox">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/generateBoolCheckbox"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="aModel">
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="generateDateCalendar">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/generateDateCalendar"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="aModel">
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="generateInputText">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/generateInputText"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="aModel">
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="generateSelectOneMenu">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/generateSelectOneMenu"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="aModel">
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="generateSpinner">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/generateSpinner"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="aModel">
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="generateTimeCalendar">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/generateTimeCalendar"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="aModel">
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+        </eParameters>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="OclAny_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Collection(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Collection(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Sequence(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Sequence(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="OrderedSet(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OrderedSet(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Model_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+      </eAnnotations>
+    </eClassifiers>
+  </ecore:EPackage>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ecore:EAnnotation source="positions">
+    <eAnnotations source="positions.0" references="/0/generateCompositeComponents">
+      <details key="start" value="193"/>
+      <details key="end" value="479"/>
+      <details key="line" value="8"/>
+    </eAnnotations>
+    <eAnnotations source="positions.1" references="/0/generateCompositeComponents/%">
+      <details key="start" value="256"/>
+      <details key="end" value="284"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.2" references="/0/generateCompositeComponents/%/aModel">
+      <details key="start" value="277"/>
+      <details key="end" value="283"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.3" references="/0/generateCompositeComponents/%.1">
+      <details key="start" value="286"/>
+      <details key="end" value="287"/>
+      <details key="line" value="10"/>
+    </eAnnotations>
+    <eAnnotations source="positions.4" references="/0/generateCompositeComponents/%.2">
+      <details key="start" value="288"/>
+      <details key="end" value="316"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.5" references="/0/generateCompositeComponents/%.2/aModel">
+      <details key="start" value="309"/>
+      <details key="end" value="315"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.6" references="/0/generateCompositeComponents/%.3">
+      <details key="start" value="318"/>
+      <details key="end" value="319"/>
+      <details key="line" value="11"/>
+    </eAnnotations>
+    <eAnnotations source="positions.7" references="/0/generateCompositeComponents/%.4">
+      <details key="start" value="320"/>
+      <details key="end" value="345"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.8" references="/0/generateCompositeComponents/%.4/aModel">
+      <details key="start" value="338"/>
+      <details key="end" value="344"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.9" references="/0/generateCompositeComponents/%.5">
+      <details key="start" value="347"/>
+      <details key="end" value="348"/>
+      <details key="line" value="12"/>
+    </eAnnotations>
+    <eAnnotations source="positions.10" references="/0/generateCompositeComponents/%.6">
+      <details key="start" value="349"/>
+      <details key="end" value="378"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.11" references="/0/generateCompositeComponents/%.6/aModel">
+      <details key="start" value="371"/>
+      <details key="end" value="377"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.12" references="/0/generateCompositeComponents/%.7">
+      <details key="start" value="380"/>
+      <details key="end" value="381"/>
+      <details key="line" value="13"/>
+    </eAnnotations>
+    <eAnnotations source="positions.13" references="/0/generateCompositeComponents/%.8">
+      <details key="start" value="382"/>
+      <details key="end" value="405"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.14" references="/0/generateCompositeComponents/%.8/aModel">
+      <details key="start" value="398"/>
+      <details key="end" value="404"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.15" references="/0/generateCompositeComponents/%.9">
+      <details key="start" value="407"/>
+      <details key="end" value="408"/>
+      <details key="line" value="14"/>
+    </eAnnotations>
+    <eAnnotations source="positions.16" references="/0/generateCompositeComponents/%.10">
+      <details key="start" value="409"/>
+      <details key="end" value="437"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.17" references="/0/generateCompositeComponents/%.10/aModel">
+      <details key="start" value="430"/>
+      <details key="end" value="436"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.18" references="/0/generateCompositeComponents/%.11">
+      <details key="start" value="439"/>
+      <details key="end" value="440"/>
+      <details key="line" value="15"/>
+    </eAnnotations>
+    <eAnnotations source="positions.19" references="/0/generateCompositeComponents/%.12">
+      <details key="start" value="441"/>
+      <details key="end" value="465"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.20" references="/0/generateCompositeComponents/%.12/aModel">
+      <details key="start" value="458"/>
+      <details key="end" value="464"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.21" references="/0/generateCompositeComponents/%.13">
+      <details key="start" value="108"/>
+      <details key="end" value="192"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.22" references="/0/generateCompositeComponents/%.13/aModel">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.23" references="/0/generateCompositeComponents/aModel">
+      <details key="start" value="238"/>
+      <details key="end" value="252"/>
+      <details key="line" value="8"/>
+    </eAnnotations>
+    <eAnnotations source="positions.24" references="/0/generatePassword">
+      <details key="start" value="481"/>
+      <details key="end" value="2295"/>
+      <details key="line" value="18"/>
+    </eAnnotations>
+    <eAnnotations source="positions.25" references="/0/generatePassword/%">
+      <details key="start" value="533"/>
+      <details key="end" value="2283"/>
+      <details key="line" value="19"/>
+    </eAnnotations>
+    <eAnnotations source="positions.26" references="/0/generatePassword/%/%">
+      <details key="start" value="608"/>
+      <details key="end" value="2276"/>
+      <details key="line" value="20"/>
+    </eAnnotations>
+    <eAnnotations source="positions.27" references="/0/generatePassword/%/%.1">
+      <details key="start" value="540"/>
+      <details key="end" value="589"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.28" references="/0/generatePassword/%/%.2">
+      <details key="start" value="598"/>
+      <details key="end" value="605"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.29" references="/0/generatePassword/aModel">
+      <details key="start" value="516"/>
+      <details key="end" value="530"/>
+      <details key="line" value="18"/>
+    </eAnnotations>
+    <eAnnotations source="positions.30" references="/0/generateBoolCheckbox">
+      <details key="start" value="2297"/>
+      <details key="end" value="3929"/>
+      <details key="line" value="60"/>
+    </eAnnotations>
+    <eAnnotations source="positions.31" references="/0/generateBoolCheckbox/%">
+      <details key="start" value="2353"/>
+      <details key="end" value="3917"/>
+      <details key="line" value="61"/>
+    </eAnnotations>
+    <eAnnotations source="positions.32" references="/0/generateBoolCheckbox/%/%">
+      <details key="start" value="2432"/>
+      <details key="end" value="3910"/>
+      <details key="line" value="62"/>
+    </eAnnotations>
+    <eAnnotations source="positions.33" references="/0/generateBoolCheckbox/%/%.1">
+      <details key="start" value="2360"/>
+      <details key="end" value="2413"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.34" references="/0/generateBoolCheckbox/%/%.2">
+      <details key="start" value="2422"/>
+      <details key="end" value="2429"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.35" references="/0/generateBoolCheckbox/aModel">
+      <details key="start" value="2336"/>
+      <details key="end" value="2350"/>
+      <details key="line" value="60"/>
+    </eAnnotations>
+    <eAnnotations source="positions.36" references="/0/generateDateCalendar">
+      <details key="start" value="3931"/>
+      <details key="end" value="5527"/>
+      <details key="line" value="95"/>
+    </eAnnotations>
+    <eAnnotations source="positions.37" references="/0/generateDateCalendar/%">
+      <details key="start" value="3987"/>
+      <details key="end" value="5515"/>
+      <details key="line" value="96"/>
+    </eAnnotations>
+    <eAnnotations source="positions.38" references="/0/generateDateCalendar/%/%">
+      <details key="start" value="4066"/>
+      <details key="end" value="5508"/>
+      <details key="line" value="97"/>
+    </eAnnotations>
+    <eAnnotations source="positions.39" references="/0/generateDateCalendar/%/%.1">
+      <details key="start" value="3994"/>
+      <details key="end" value="4047"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.40" references="/0/generateDateCalendar/%/%.2">
+      <details key="start" value="4056"/>
+      <details key="end" value="4063"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.41" references="/0/generateDateCalendar/aModel">
+      <details key="start" value="3970"/>
+      <details key="end" value="3984"/>
+      <details key="line" value="95"/>
+    </eAnnotations>
+    <eAnnotations source="positions.42" references="/0/generateInputText">
+      <details key="start" value="5529"/>
+      <details key="end" value="7536"/>
+      <details key="line" value="130"/>
+    </eAnnotations>
+    <eAnnotations source="positions.43" references="/0/generateInputText/%">
+      <details key="start" value="5582"/>
+      <details key="end" value="7524"/>
+      <details key="line" value="131"/>
+    </eAnnotations>
+    <eAnnotations source="positions.44" references="/0/generateInputText/%/%">
+      <details key="start" value="5658"/>
+      <details key="end" value="7517"/>
+      <details key="line" value="132"/>
+    </eAnnotations>
+    <eAnnotations source="positions.45" references="/0/generateInputText/%/%.1">
+      <details key="start" value="5589"/>
+      <details key="end" value="5639"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.46" references="/0/generateInputText/%/%.2">
+      <details key="start" value="5648"/>
+      <details key="end" value="5655"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.47" references="/0/generateInputText/aModel">
+      <details key="start" value="5565"/>
+      <details key="end" value="5579"/>
+      <details key="line" value="130"/>
+    </eAnnotations>
+    <eAnnotations source="positions.48" references="/0/generateSelectOneMenu">
+      <details key="start" value="7538"/>
+      <details key="end" value="9433"/>
+      <details key="line" value="175"/>
+    </eAnnotations>
+    <eAnnotations source="positions.49" references="/0/generateSelectOneMenu/%">
+      <details key="start" value="7595"/>
+      <details key="end" value="9421"/>
+      <details key="line" value="176"/>
+    </eAnnotations>
+    <eAnnotations source="positions.50" references="/0/generateSelectOneMenu/%/%">
+      <details key="start" value="7675"/>
+      <details key="end" value="9414"/>
+      <details key="line" value="177"/>
+    </eAnnotations>
+    <eAnnotations source="positions.51" references="/0/generateSelectOneMenu/%/%.1">
+      <details key="start" value="7602"/>
+      <details key="end" value="7656"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.52" references="/0/generateSelectOneMenu/%/%.2">
+      <details key="start" value="7665"/>
+      <details key="end" value="7672"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.53" references="/0/generateSelectOneMenu/aModel">
+      <details key="start" value="7578"/>
+      <details key="end" value="7592"/>
+      <details key="line" value="175"/>
+    </eAnnotations>
+    <eAnnotations source="positions.54" references="/0/generateSpinner">
+      <details key="start" value="9435"/>
+      <details key="end" value="11336"/>
+      <details key="line" value="216"/>
+    </eAnnotations>
+    <eAnnotations source="positions.55" references="/0/generateSpinner/%">
+      <details key="start" value="9486"/>
+      <details key="end" value="11324"/>
+      <details key="line" value="217"/>
+    </eAnnotations>
+    <eAnnotations source="positions.56" references="/0/generateSpinner/%/%">
+      <details key="start" value="9560"/>
+      <details key="end" value="11317"/>
+      <details key="line" value="218"/>
+    </eAnnotations>
+    <eAnnotations source="positions.57" references="/0/generateSpinner/%/%.1">
+      <details key="start" value="9493"/>
+      <details key="end" value="9541"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.58" references="/0/generateSpinner/%/%.2">
+      <details key="start" value="9550"/>
+      <details key="end" value="9557"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.59" references="/0/generateSpinner/aModel">
+      <details key="start" value="9469"/>
+      <details key="end" value="9483"/>
+      <details key="line" value="216"/>
+    </eAnnotations>
+    <eAnnotations source="positions.60" references="/0/generateTimeCalendar">
+      <details key="start" value="11338"/>
+      <details key="end" value="13026"/>
+      <details key="line" value="258"/>
+    </eAnnotations>
+    <eAnnotations source="positions.61" references="/0/generateTimeCalendar/%">
+      <details key="start" value="11394"/>
+      <details key="end" value="13014"/>
+      <details key="line" value="259"/>
+    </eAnnotations>
+    <eAnnotations source="positions.62" references="/0/generateTimeCalendar/%/%">
+      <details key="start" value="11473"/>
+      <details key="end" value="13007"/>
+      <details key="line" value="260"/>
+    </eAnnotations>
+    <eAnnotations source="positions.63" references="/0/generateTimeCalendar/%/%.1">
+      <details key="start" value="11401"/>
+      <details key="end" value="11454"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.64" references="/0/generateTimeCalendar/%/%.2">
+      <details key="start" value="11463"/>
+      <details key="end" value="11470"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.65" references="/0/generateTimeCalendar/aModel">
+      <details key="start" value="11377"/>
+      <details key="end" value="11391"/>
+      <details key="line" value="258"/>
+    </eAnnotations>
+  </ecore:EAnnotation>
+</xmi:XMI>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:comp="http://java.sun.com/jsf/composite/ezcomp"
+	  xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="body">
+        	<p:panel id="mainPanel" styleClass="mainPanel" header="#{bundle.ViewPersonTitle}"> 
+        		<p:fieldset id="mainFieldset" legend="#{bundle.MainFieldsetTitle}"> 
+        			<h:panelGrid columns="2" styleClass="viewPanelGrid">
+        				<h:outputText value="#{bundle.Person_birthDate}"/>
+        				<h:outputText value="#{personController.selected.birthDate}" title="#{bundle.ViewPersonTitle_birthDate}"/>
+        				<h:outputText value="#{bundle.Person_firstName}"/>
+        				<h:outputText value="#{personController.selected.firstName}" title="#{bundle.ViewPersonTitle_firstName}"/>
+        				<h:outputText value="#{bundle.Person_lastName}"/>
+        				<h:outputText value="#{personController.selected.lastName}" title="#{bundle.ViewPersonTitle_lastName}"/>
+        			</h:panelGrid>
+        		</p:fieldset>
+        		<p:fieldset id="addressFieldsetView" legend="#{bundle.Person_address}"> 
+        			<h:panelGrid columns="2" styleClass="viewPanelGrid">
+        				<h:outputText value="#{bundle.Address_city}"/>
+        				<h:outputText value="#{personController.selected.address.city}" title="#{bundle.ViewAddressTitle_city}"/>
+        				<h:outputText value="#{bundle.Address_country}"/>
+        				<h:outputText value="#{personController.selected.address.country}" title="#{bundle.ViewAddressTitle_country}"/>
+        				<h:outputText value="#{bundle.Address_streetName}"/>
+        				<h:outputText value="#{personController.selected.address.streetName}" title="#{bundle.ViewAddressTitle_streetName}"/>
+        				<h:outputText value="#{bundle.Address_zipCode}"/>
+        				<h:outputText value="#{personController.selected.address.zipCode}" title="#{bundle.ViewAddressTitle_zipCode}"/>
+        			</h:panelGrid>
+        		</p:fieldset>
+        		
+        		
+        	 </p:panel>
+		</ui:define>
+        <ui:define name="buttons">
+			<h:panelGrid columns="5">
+                <p:commandButton 	ajax="false" icon="ui-icon-trash"
+									update="mainPanel" 
+									actionListener="#{personController.destroyAndView}" 
+									value="#{bundle.DestroyLink}" />
+				<p:commandButton 	ajax="false" icon="ui-icon-pencil"
+									action="Edit" 
+									value="#{bundle.EditLink}"/>
+                <p:commandButton 	ajax="false" icon="ui-icon-document"
+									action="#{personController.prepareCreate}" 
+									value="#{bundle.PersonCreateLink}"
+									immediate="true"/>
+                <p:commandButton 	ajax="false" icon="ui-icon-search"
+									action="#{personController.prepareList}" 
+									value="#{bundle.PersonShowAllLink}" 
+									immediate="true"/>
+ 				<h:commandLink>
+                          			 <p:commandButton value="#{bundle.PrinterLink}" icon="ui-icon-print"/>  
+									<!--<p:printer type="printer" target="mainPanel"
+									fileName="person" />-->
+				</h:commandLink>
+			</h:panelGrid>
+        </ui:define>
+    </ui:composition>
+</html>
